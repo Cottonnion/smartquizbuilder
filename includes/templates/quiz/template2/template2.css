@@ -1,0 +1,77 @@
+
+/**Quiz_temp**/
+
+
+.Quiz-Template3{display: inline-block;width: 100%;padding: 0px;max-width: 640px;border: 1px solid #ddd;margin: 0;vertical-align: middle;text-align: left;border-radius: 7px;background: #fff;font-family: 'DM Sans',sans-serif;color: #333;font-size: 16px;font-weight: normal;line-height: 1.4;}
+
+.Quiz-Template3 .Quiz-Template-title, .Quiz-Template3 .Quiz-Template-image, 
+.Quiz-Template3 .Quiz-Template-content , .Quiz-Template-content p , 
+.Quiz-Template-content ul.Quiz-question-points {display: inline-block;width: 100%;margin: 0;padding: 0;vertical-align: middle;font-family: 'DM Sans',sans-serif;}
+
+.Quiz-Template3 .Quiz-Template-title {text-align: center;margin-bottom: 15px;font-size: 24px;font-weight: normal;color: #333;}
+
+.Quiz-Template3 .Quiz-Template-image img {max-width: 100%;vertical-align: middle;width: 100%;height: 100%;margin: 0 auto 15px;}
+
+.Quiz-Template-content p {color: #333;font-size: 16px;font-weight: normal;line-height: 1.4;margin-bottom: 15px;}
+
+.Quiz-Template3 .take-quiz-btn {display: inline-block; width: 100%; border-radius: 8px; background:#ff634d ; color: #fff; height: auto; padding: 10px 15px; font-family: 'DM Sans',sans-serif; min-width: 90px; box-shadow: none; margin: 0 0 15px 0; text-decoration: none; line-height: normal; border: none; text-align: center; text-transform: uppercase; font-size: 26px; font-weight: normal; }
+
+.Quiz-Template3 .Quiz-Template-content ul.Quiz-question-points {list-style: none;margin: 0 0 15px 0; padding:0 10px}
+
+.Quiz-Template3 .Quiz-Template-content ul.Quiz-question-points li {padding: 8px 13px;background: #f7f7f7;margin: 5px 0;display: inline-block;width: 100%;border-radius: 5px;color: #333;font-size: 16px;font-weight: normal;line-height: 1.4;}
+
+.Quiz-Template3 .Quiz-Template-content ul.Quiz-question-points li > label {margin: 2px 0 0 0;vertical-align: top;display: inline-block;width: auto}
+
+.Quiz-Template3 .quiz-template-pagination {margin: 0px 0 0 0;display: flex;clear: both;width: 100%;justify-content: space-between; padding:0 23px 15px;}
+
+.Quiz-Template3 .quiz-template-pagination .prev-quiz-question, .Quiz-Template3 .quiz-template-pagination .next-quiz-question {    font-weight: 600;border-radius: 5px; background: #676767 !important; color: #fff; height: auto; padding: 9px 15px; text-transform: none; font-family: 'DM Sans',sans-serif; min-width: 90px; box-shadow: none; margin-right: 10px; text-decoration: none; margin: 0; line-height: normal; border: none; font-size: 14px; text-align: center; }
+
+.Quiz-Template3 .quiz-template-pagination .next-quiz-question {background: #089208 !important;}
+
+.Quiz-Template3 .quiz-template-pagination > span {display: inline-block; line-height: 32px; white-space: nowrap; margin: 0; padding: 0 13px; width: auto; font-size: 14px; }
+.Quiz-Template3 .Quiz-Template-image{
+    height: 250px;
+    max-height: 250px;
+}  
+
+.quiz_quesans_template_outer .sqb_ans_item .sqb_and_field.sqb_input_ans_field , .question_add_answer_outer_div .sqb_ans_item .sqb_input_ans_field.sqb_input_ans_field , .sqb_input_ans_field.sqb_input_ans_field {
+	visibility:hidden;
+}
+  
+.quiz_quesans_template_outer .Quiz-Template .Quiz-Template-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+   
+.quiz_quesans_template_outer  .Quiz-QuestionANswer-Template .question_add_answer_outer_div , .question_add_answer_outer_div{    
+ 
+     width: 100%;
+    float: left;
+}
+ 
+.quiz_quesans_template_outer  .Quiz-QuestionANswer-Template .sqb_ans_item ,  .question_add_answer_outer_div .sqb_ans_item {    
+    margin: 15px 0 15px 0;
+    padding: 15px 20px;
+    width: 100%;
+    border: 1px solid #eee;
+	background: #f3f6f9;
+}
+.quiz_quesans_template_outer .sqb_ans_item input , .quiz_quesans_template_outer .sqb_ans_item {
+	cursor:pointer;
+}
+.quiz_quesans_template_outer .sql_ans_text , .question_add_answer_outer_div .sql_ans_text   {
+	 margin: 0 auto;
+    text-align: left;
+}
+.quiz_quesans_template_outer .sql_ans_text  img {
+    border: 0;
+    height: auto;
+    vertical-align: middle;
+    max-width: 100%;
+    width: 130px;
+    text-align: center;
+    margin: 0 auto;
+} 

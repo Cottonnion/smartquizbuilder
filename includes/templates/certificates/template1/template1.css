@@ -1,0 +1,442 @@
+
+.cs_customize_template_outer_div {
+    position: relative;
+}
+
+#certificates_outer1 {
+position: absolute; 
+bottom:  0;
+top:  0;
+left:    0;   
+ width: 100%;
+ height: 780px;
+
+}
+		
+.certificates-section {position: relative; max-width: 1200px; width: 1200px; min-width: 1200px; margin: 0 auto; clear: both; font-family: "Montserrat", sans-serif;    } 
+
+.certificate-heading , .certificate-heading .heading_top {font-family: "Trajan Pro";}
+
+.certificate-heading {text-align: center; margin: 0px auto; width: 100%; max-width: 100%; box-sizing: border-box; padding: 70px 100px;clear: both; }
+
+.heading_top {font-size: 65px; color: #f8f9f9; margin: 0; padding: 0; line-height: 1; display: block; width: 100%; vertical-align: middle; text-align: center; text-transform: initial; font-weight: normal; letter-spacing: 15px;}
+.add_course_certificates_wrapper .heading_top{
+	font-size: 70px;
+}
+.certificate-heading small {font-size: 30px; color: #e5c055; font-weight: 700; font-family: "Raleway", sans-serif; display: block; width: 100%; margin: 2px 0 0 0; padding: 0; float: left; letter-spacing: 8px; text-transform: initial;}
+ 
+	
+	.add_course_certificates_wrapper .certificate-heading small{
+	font-size: 36px;
+}
+
+.certificate-bottom-info .bottom-info-block label {margin: 0 !important; font-weight: 700; border-top: 1px solid #000; padding: 18px 0 0 0 !important; letter-spacing: 1.3px; } 
+
+.certificate-bottom-info .bottom-info-block {float: left; }
+.certificate-bottom-info .bottom-info-block.date-block {float: right; }
+
+.award-img {
+text-align: center;
+margin: 0;
+padding: 0;
+width: 100%;
+margin-top: 40px;
+margin-bottom: 40px;
+clear: both;
+ 
+}
+ 
+.add_course_certificates_wrapper .award-img {
+	width: 160px;
+	height: 160px;
+	margin: 0 auto;
+	display: table;
+}
+
+.award-img img {   vertical-align: middle;  text-align: center; }
+.certificate-center-content {
+    margin: 0;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 100px;
+    box-sizing: border-box;
+    width: 100%;
+    width: 500px;
+    clear: both;
+    vertical-align: middle;
+    display: table;
+}
+
+.add_course_certificates_wrapper  .certificate-center-content {
+    margin:20px 0 0 ; 
+}
+
+.certificate-center-content p {margin: 0 0 20px 0; padding: 0; color: #000000; font-size: 16px; line-height: 1;   text-align: center;} 
+ 
+.add_course_certificates_wrapper  .certificate-center-content p {
+    margin: 0px 0 0px 0;
+    font-size: 18px; 
+} 
+
+
+.certificate-center-content .certificate-name-info {  width: 100%; margin: 0 0 10px 0; padding: 0; text-align: center; color: #b98817; font-size: 22px; font-weight: 600; font-family: "Montserrat", sans-serif;font-style:normal; }
+.certificate-center-content .certificate-name-info em{  font-style:italic; }
+.add_course_certificates_wrapper .certificate-center-content .certificate-name-info {
+	 margin: 0px 0 0 0;font-size: 26px;
+}
+.certificate-center-content .course-name-info {  width: 100%; margin: 10px 0 0px 0; padding: 0; text-align: center; color: #000000; font-size: 18px; font-weight: 600; font-family: "Montserrat", sans-serif; }
+.add_course_certificates_wrapper .certificate-center-content .course-name-info {
+	 margin: 0px 0 0 0;font-size: 20px;
+}
+ 
+
+.certificates-section {background-repeat: no-repeat;background-size: 100% 100%;    text-align: center; }
+
+.certificates-section .certificate-heading {margin-top: 0;}
+.add_course_certificates_wrapper .certificates-section .certificate-heading {margin-top:0px;}
+
+ .certificate-bottom-info {
+    padding: 0 100px;
+    width: 100%;
+	margin: 0px 0 0;
+}
+ 
+.add_course_certificates_wrapper  .certificate-bottom-info {
+    padding: 0 80px;
+    margin: 30px 0 0;
+}
+
+.certificate-bottom-info table.table {
+    margin: 0;
+    border: none;
+} 
+
+.certificate-bottom-info table.table tr th, .certificate-bottom-info table.table tr td {
+    padding: 0;
+    border: none;
+}
+
+.certificate-bottom-info .bottom-info-block {
+    width: auto;
+    min-width: 210px;
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+   
+}
+.add_course_certificates_wrapper  .certificate-bottom-info .bottom-info-block {
+     font-size: 18px;    
+}
+
+.certificate-bottom-info .bottom-info-block p, .certificate-bottom-info .bottom-info-block label {
+        margin: 0 0 17px 0;
+    padding: 0;
+    width: 100%;
+    
+    clear: both;
+    white-space: nowrap;
+    font-size: 16px;
+    color: #000;
+    font-family: helvetica;
+    font-weight: 600;
+}
+.add_course_certificates_wrapper .certificate-bottom-info .bottom-info-block p , .add_course_certificates_wrapper .certificate-bottom-info .bottom-info-block label{
+	  margin: 0 0 0 0;
+}
+ 
+.certificate-bottom-info .bottom-info-block label {
+    margin: 0;
+    font-weight: 700;
+    border-top: 0px solid #000;
+    padding: 0 0 0 0;
+    letter-spacing: 1.3px;
+}
+.add_course_certificates_wrapper .certificate-bottom-info .bottom-info-block label {
+    padding: 18px 0 0 0;
+
+}
+.upper_case_font{
+	 text-transform: initial;
+}
+.add_course_certificates_wrapper .certificates_table_outer{
+        height:310px !important;padding:0 !important;
+    width: 100%;
+}
+ 
+ .award-img  .award_img_inner{width:180px; height: auto; margin:30px auto 40px}
+ .award-img  .award_img_inner img{width:100%;  height: 100%;}
+ .add_course_certificates_wrapper .certificate-center-content p {
+    margin: 10px 0 10px 0;
+} 
+
+/*******For width 1000 **********/
+ 
+ .certificates-section.wid-1000{
+	max-width: 1100px; width: 1100px; min-width: 1100px;height: 750px;
+}
+
+ /*******For width 1000 **********/
+ 
+ .certificates-section.wid-1000{
+	max-width: 1000px; width: 1000px; min-width: 1000px;height: 750px;
+}
+
+
+/*******For width 900 **********/
+.certificates-section.wid-900{
+	max-width: 900px; width: 900px; min-width: 900px;    height: 700px;
+} 
+
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+    background: #fbfbfb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings input#uploadimage_certi_btn {
+    margin-top: 0!important;
+}
+
+.personalize_options .addmerget-content .mergetags_cont {
+    max-height: 380px;
+}
+
+.cert_customize_template_html a.notification-header.show_merge_tags.show_merge_tags1 {
+    padding: 7px 47px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings .dvcv11 {
+    width: auto;
+    margin-bottom: 0!important;
+}
+
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings .dvcv11 .show_merge_tags {
+    padding: 10px 10px;
+}
+
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings h4 {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings .dropdown.dropdown-custom-style {
+    width: 160px!important;
+}
+
+.cert_customize_customiser-wrapper .Template-Customize-element-inner.element_paddings input#uploadimage_certi_btn {
+    font-size: 13px!important;
+    padding: 10px 20px;
+}
+
+
+/*Template2 CSS*/
+
+.template-heading *{
+    font-family: Libre Baskerville;
+    font-size: 75px;
+    color: #334166;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.template-subheading *{
+    color: #C39A5C;
+    font-family: Libre Baskerville;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.template-subdescription *{
+    color: #334166;
+    font-family: Rasa;
+    font-size: 26px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.template-username *{
+    color: #03969E;
+    font-family: Dancing Script;
+    font-size: 62px;
+    text-align: center;
+    line-height: 1.2;
+    zoom: 0.8;
+    text-transform: lowercase;
+}
+
+.template-description *{
+    color: #334166;
+    font-family: Rasa;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.template-signature-heading *, .template-date-heading *{
+    color: #334166;
+    font-family: Rasa;
+    font-size: 20px;
+    text-align: center;
+}
+
+.template-signature-content *, .template-date-content *{
+    color: #865B34;
+    font-size: 16px;
+    font-family: Rasa;
+    text-align: center;
+}
+
+.certificates_outer1-tmp2 {
+    position: absolute;
+    bottom: 0;top: 0;
+    left: 0;
+     width: 100%;
+     height: 700px;
+     z-index: 0;
+ }
+
+
+.dragable-certificate-element {
+   position: absolute;
+   width: 100%;
+}
+
+.dragable-certificate-element .delete-template-element {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    background: #f00;
+    width: 20px;
+    height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.dragable-certificate-element:hover .delete-template-element {
+    display: flex;
+}
+.dragable-certificate-element .delete-template-element > i {
+    font-size: 15px;
+    display: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.dragable-certificate-element.hide-this-section-in-frontend > div{
+    opacity: 0.5;
+}
+
+.dragable-certificate-element.hide-this-section-in-frontend .fa-eye:before {
+    content: "\f070";
+}
+
+.dragable-certificate-element:hover .delete-template-element > i {
+    display: block;
+}
+
+.dragable-certificate-element:before {
+    border: 2px solid red;
+}
+
+.template2-main-wrapper main .certificate-element-max-conetnt {
+    width: 300px;
+    position: absolute;
+}
+
+.dragable-certificate-element:hover {
+    outline: 2px solid red;
+    cursor: all-scroll;
+}
+
+.certificates-section-tmp2 {
+    max-width: 1200px;
+    width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: 700px;
+    -webkit-box-shadow: 0px 0px 17px -3px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 0px 17px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 17px -3px rgb(0 0 0 / 75%);
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.template-certificate-icon.award_img_inner {
+    text-align: center;
+}
+
+.dragable-certificate-element p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.dap_cerficate_stroke .dap-stroke-line {
+    width: 100%;
+    height: 2px;
+    background: #C39A5C;
+    display: block;
+    margin: 0;
+}
+
+.dap_cerficate_stroke {
+    display: flex;
+    align-items: center;
+}
+
+.dap-stroke-dots {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C39A5C;
+    border-radius: 100%;
+}
+
+.certificate-element-resizable.only-width-resizable {
+    height: auto!important;
+}
+
+.dragable-certificate-element span.edit-template-element {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    top: calc(50% - 15px);
+    background: #fff;
+    line-height: 1;
+    padding-top: 8px;
+    cursor: pointer;
+    color: #03a9f4;
+    font-size: 15px;
+    border-radius: 20pX;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+.dragable-certificate-element:hover span.edit-template-element {
+   display: none!important;
+}
+
+.template2-main-wrapper.hide-edit-icon .dragable-certificate-element span.edit-template-element{
+    display: none!important;
+}

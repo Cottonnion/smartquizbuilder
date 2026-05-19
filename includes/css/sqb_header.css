@@ -1,0 +1,16 @@
+
+.Quiz-Funnel-outer , .Quiz-Funnel-outer * {box-sizing: border-box;}
+
+.quiz_outer {display: inline-block;width: 100%;margin: 30px 0;padding: 0;vertical-align: middle; direction: ltr;}
+
+#Quiz-Tabs.nav-tabs {border: none;margin: 0;padding: 0 1px;border-radius: 0; width: 100%; background: #f1f1f1; list-style: none; overflow-x: auto; }
+
+#Quiz-Tabs.nav-tabs .nav-item  {margin: 0;padding: 0;}
+
+#Quiz-Tabs.nav-tabs .nav-item .nav-link {width: 100%;text-align: center;margin: 0;border: none;background: none;border-radius: 0;color: #666666;padding: 18px 30px;text-transform: uppercase;font-size: 16px;font-weight: 700;transition: .4s all;
+position: relative;font-family: 'DM Sans',sans-serif;}
+
+#Quiz-Tabs.nav-tabs .nav-item .nav-link.active {box-shadow: 0 3px #f05451 inset;color: #000;background: #fff;z-index: 10;}
+
+#Quiz-Funnel-TabContent {position: relative;transition: transform 0.4s;border:1px solid #e7e7e7;margin-top: -1px;}
+

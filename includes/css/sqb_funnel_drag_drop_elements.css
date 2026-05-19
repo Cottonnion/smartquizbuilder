@@ -1,0 +1,110 @@
+.Template-Customize-Setting {background: #f0f3f3;padding: 0 0 10px;float: left;width: 100%;margin-top: 0;margin-bottom: 25px;}
+
+.Template-Customize-Setting h3 {text-align: center;font-size: 16px;font-weight: bold;font-family: "Open Sans", sans-serif !important;letter-spacing: 0.5px;padding: 12px 0;color: #fff;border-bottom: 1px solid #dee8e8;text-transform: capitalize;background: #17d3b3;display: flex;justify-content: center;align-items: center;margin: 0;}
+
+.Template-Customize-Setting .customize_open_close {margin-left: 7px;}
+
+.Template-Customize-Setting .customize_open_close .fa {font-weight: 600;cursor: pointer;}
+
+.Template-Customize-Setting .customizer_innner_sections {float: left;width: 100%;margin: 0;padding: 10px;box-sizing: border-box;}
+
+.Template-Customize-Setting .Template-Customize-element {display: inline-block;width: 100%;margin: 0;padding: 0;vertical-align: middle;}
+
+.Template-Customize-Setting .Template-Customize-element-btn ,
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 .template_style.element_btn 
+{display: inline-block;background: #fff;color: #555;font-weight: bold;text-transform: capitalize;width: 100%;height: 40px;line-height: 40px;font-size: 14px;font-family: "Open Sans", sans-serif !important;text-align: left;border: 1px solid #dee8e8;border-radius: 4px;letter-spacing: 0;padding: 0 8px;margin: 0;}
+
+.Template-Customize-element-inner {padding: 10px 10px;margin: 0;display: inline-block;background: #fff;width: 100%;vertical-align: middle;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box {margin: 0;padding: 0;width: 100%;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box > h4 {font-size: 13px;color: #000;text-transform: capitalize;font-weight: 600;font-family: "Open Sans", sans-serif !important;letter-spacing: .5px;margin-bottom: 0px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box input, .Template-Customize-Setting .Template-Customize-element .inner_template_style_box select {height: 38px;font-size: 12px;background: #fff;border: 1px solid #ddd;padding: 0 10px;width: 100%;margin: 5px 0 0 0;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box p {margin: 0;padding: 0;display: inline-block;width: 100%;vertical-align: middle;}
+
+.Template-Customize-Setting .Template-Customize-element + .Template-Customize-element {margin-top: 15px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box + .inner_template_style_box {margin-top: 13px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box .input-group {display: flex;flex-wrap: nowrap;margin-top: 5px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box .input-group .input-group-addon i {height: 38px;width: 27px;margin-right: 0;border: 1px solid #c7c7c7;border-left: 1px solid #c7c7c7;display: inline-block;cursor: pointer;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box .input-group > input {margin: 0;}
+
+.Template-Customize-Setting .Template-Customize-element-btn.draggableElement i.fa, 
+.Template-Customize-Setting .Template-Customize-element-btn.draggableElement span.sub_heading ,
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 .template_style.element_btn i.fa ,
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 .template_style.element_btn span.sub_heading {font-size: 24px;margin: 0;color: #17d3b3;font-weight: 500;vertical-align: middle;width: 40px;display: inline-block;}
+
+.Template-Customize-content {float: left;width: 100%;margin: 20px 0;padding: 0 25px 0 0;max-width: calc(100% - 300px);max-width: -webkit-calc(100% - 300px);max-width: -moz-calc(100% - 300px);max-width: -ms-calc(100% - 300px);}
+
+.Template-Customize-setting-outer {float: right;width: 300px;margin: 20px 0;padding: 0;max-width: 100%;}
+
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 + .Template-Customize-element1 {margin-top: 13px;}
+
+.Template-Customize-Setting .slider.slider-horizontal {width: 100% !important;}
+
+.Template-Customize-Setting .slider.slider-horizontal .slider-track {background: #478935;height: 2px;margin-top: -1px;}
+
+.Template-Customize-Setting .slider.slider-horizontal .slider-selection {background: #478935;}
+
+.Template-Customize-Setting .slider.slider-horizontal .slider-handle {position: absolute;top: 0px;margin-left: 0;width: 19px;height: 19px;background: #fff;background-image: none;border: 2px solid #478935;cursor: pointer;}
+
+
+
+
+.Quiz-Template .ui_helper_my_custom_element {width: 100% !important;height: auto !important;padding: 10px !important;margin: 5px 0;max-width: 1360px !important;position: relative;}
+
+.Quiz-Template .ui_helper_my_custom_element:hover{background: #fff;box-shadow: 4px 4px 20px 4px rgba(0, 0, 0, 0.20);}
+
+.Quiz-Template .ui_helper_my_custom_element.element_customizer_active {border: 2px dotted #16d3b3 !important;}
+
+.Quiz-Template .element_drop_here {border: 2px dotted #16d3b3 !important; width: 100% !important; float: left; text-align: left; text-transform: uppercase; font-weight: 600; font-size: 17px; color: #ada0a0; padding: 20px; }
+
+.Quiz-Template .ui_helper_my_custom_element .hover_close_btn {position: absolute;right: 6px;top: 1px;color: #ff1616;font-size: 16px;line-height: normal;z-index: 5;opacity: 0;visibility: hidden;}
+
+.Quiz-Template .ui_helper_my_custom_element:hover .hover_close_btn {opacity: 1;visibility: visible;}
+
+.Quiz-Template .Template-Customize-element1 img, 
+.Quiz-Template .Template-Customize-element1 iframe {max-width: 100%;}
+
+.Quiz-Template .testimonial_outer_section {display: flex;padding: 10px;}
+
+.Quiz-Template .testimonial_outer_section .client_image {flex-basis: 110px;max-width: 110px;min-width: 110px;width: 110px;}
+
+.Quiz-Template .testimonial_outer_section .client_image img {width: 100%;}
+
+.Quiz-Template .testimonial_outer_section .client_feed_bk {padding: 0 0 0 25px;}
+
+.Quiz-Template .dragdrop_bullet_points ul {display: inline-block;width: 100%;margin: 0;padding: 0;vertical-align: middle;}
+
+.Quiz-Template .dragdrop_bullet_points ul li {margin: 5px 0 10px;font-size: 14px;color: #333;font-weight: 300;line-height: 18px;list-style: none !important;padding: 0 0 0 20px !important;position: relative;}
+
+.Quiz-Template .dragdrop_bullet_points ul li::before {content: ""; width: 6px; height: 6px; background: #333; border-radius: 100%; position: absolute; left: 0; top: 6px; z-index: 2; right: auto; bottom: auto;}
+
+.Quiz-Template .Template-Customize-element1 h3 {margin: 0;letter-spacing: 0;font-weight: 600;color: #5d5d5d;font-size: 20px;margin-bottom: 20px;}
+
+.Quiz-Template ul.list-check-style , 
+.Quiz-Template ul.list-check-style li {display: inline-block;width: 100%;margin: 0 0 20px 0;padding: 0;vertical-align: middle;}
+
+.Quiz-Template ul.list-check-style {margin-bottom: 0;list-style: none;list-style: none;}
+
+.Quiz-Template h3.list--heading {color: #464646;font-size: 22px;font-weight: 600;line-height: normal;margin: 0 0 10px 0;padding: 0;}
+
+.Quiz-Template ul.list-check-style li {font-size: 14px;padding-left: 26px;position: relative;margin:5px 0;}
+
+.Quiz-Template ul.list-check-style li::before {content: ''; width: 12px; height: 6px; position: absolute; top: 4px; left: 3px; border: 3px solid #e55b10; border-top: none; border-right: none; background: transparent; transform: rotate(-45deg); z-index: 2; }
+
+.Quiz-Template  .showin_backend .sqb_add_more_li_text {background: #3cd59f; color: #fff; display: inline-block; width: auto; margin: 5px 0; padding: 5px 8px; font-size: 13px; font-weight: 600; border-radius: 4px; cursor: pointer; outline: none; box-shadow: none; float: right; }
+
+.Quiz-Template ul.list-check-style li .sqb_remove_li_text {cursor: pointer;position: absolute;right: -4px;top: -2px;color: #ff1616;font-size: 14px;width: auto;height: auto;z-index: 3;opacity: 0;visibility: hidden;display: none;}
+
+.Quiz-Template ul.list-check-style li:hover .sqb_remove_li_text {opacity: 1;visibility: visible;display: inline-block;}
+
+.Quiz-Template .ui_helper_my_custom_element .showin_backend {display: inline-block;width: 100%;margin: 10px 0 0;padding: 0;}
+
+.Quiz-Template .showin_backend .sqb_add_more_li_text i.fa {margin-right: 5px;}
+

@@ -1,0 +1,10 @@
+QuestionType,QuestionText,Description,Answer1,Correct Answer1,Answer2,Correct Answer2,Answer3,Correct Answer3,Answer4,Correct Answer4,Answer5,Correct Answer5,Answer6,Correct Answer6,Answer7,Correct Answer7,Answer8,Correct Answer8,Answer9,Correct Answer9,Answer10,Correct Answer10
+multiple_choice,Question 1. text,Question 1. description.,Answer title1,Y,Answer title2,Y,Answer title3,Y,Answer title4,Y,Answer title5,Y,Answer title6,N,Answer title7,N,Answer title8,N,Answer title9,N,Answer title10,N
+single_choice,Question 2. text,Question 2. description.,Answer title1,N,Answer title2,N,Answer title3,N,Answer title4,N,Answer title5,Y,Answer title6,N,Answer title7,N,Answer title8,N,Answer title9,N,Answer title10,N
+rating,Question 3. text,Question 3. description,1,N,2,N,3,N,4,N,5,Y,,,,,,,,,,
+ranking_choice,Question 4. text,Question 4. description,Answer title1,N,Answer title2,N,Answer title3,N,Answer title4,N,Answer title5,Y,Answer title6,N,Answer title7,N,Answer title8,N,Answer title9,N,Answer title10,N
+yes_no,Question 5. text.,Question 5. description,Yes,N,No,N,,,,,,,,,,,,,,,,
+text,Question 6. text.,Question 6. description,,,,,,,,,,,,,,,,,,,,
+slider,Question 7. text,Question 7. description,,,,,,,,,,,,,,,,,,,,
+file_upload,Question 8. text,Question 8. description,,,,,,,,,,,,,,,,,,,,
+numerical_text,Question 9. text,Question 9. description,Answer title1,,,,,,,,,,,,,,,,,,,

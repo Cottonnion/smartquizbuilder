@@ -1,0 +1,162 @@
+.quiz_right-content .dropdown.dropdown-custom-style {width: 100%;max-width: 400px;}
+
+.quiz_right-content .dropdown.dropdown-custom-style > .dropdown-toggle {max-width: 100%;}
+
+.upload-share-img {display: inline-block; vertical-align: middle; margin: 0; padding: 0; max-width: 600px; width: 100%;}
+
+.upload-share-img > img {display: inline-block; width: auto; margin: 0; padding: 0; max-width: 100%; vertical-align: middle; height: auto; }
+
+.or-divider {display: inline-block; width: 100%; margin: 15px 0; padding: 0; text-align: center;position: relative;}
+
+.or-divider > span {width: 36px; height: 36px; display: inline-block; background: #bdbdbd; line-height: 36px; text-align: center; border-radius: 100%; font-size: 14px; font-weight: 600; position: relative; z-index: 5; }
+
+.or-divider::before, .or-divider::after {content: ""; height: 1px; width: 50%; background: #bdbdbd; position: absolute; left: 0; top: 50%; margin: -0.5px 0 0 0; z-index: 1; bottom: auto; right: auto; max-width: calc(50% - 28px); }
+
+.or-divider::after {left: auto;right: 0;}
+
+/* Checkbox Design */  
+
+.checkbox-custom-style {width: 20px;height: 20px;min-width: 20px;min-height: 20px;position: relative;margin: 0 5px 0 0;background: #fcfff4;box-shadow: none;display: inline-block;border: 1px solid #ababab;vertical-align: top;}
+
+.checkbox-custom-style .custom--checkbox , .checkbox-custom-style input[type=checkbox].custom-checkbox-input {width: 100%;height: 100%;cursor: pointer;position: absolute;left: 0;top: 0;box-shadow: none;right: 0;bottom: 0;z-index: 2;background: none;margin: 0;}
+
+.checkbox-custom-style .custom--checkbox::after {content: '';width: 12px;height: 7px;position: absolute;top: 4px;left: 3px;border: 3px solid #437bc1;border-top: none;border-right: none;background: transparent;opacity: 0;transform: rotate(-45deg);}
+
+.checkbox-custom-style input[type=checkbox].custom-checkbox-input {opacity: 0;z-index: 6;}
+
+.checkbox-custom-style input[type=checkbox].custom-checkbox-input:checked + .custom--checkbox::after {opacity: 1;}
+
+/* end Checkbox Design */
+
+
+/* Template-Customize-Setting Design */
+
+.Template-Customize-Setting {background: #f0f3f3;padding: 0 0 10px;float: left;width: 100%;margin-top: 0;margin-bottom: 0;}
+
+.Template-Customize-Setting h3 {text-align: center;font-size: 16px;font-weight: bold;font-family: "Open Sans", sans-serif !important;letter-spacing: 0.5px;padding: 12px 0;color: #fff;border-bottom: 1px solid #dee8e8;text-transform: capitalize;background: #17d3b3;display: flex;justify-content: center;align-items: center;margin: 0;}
+
+.Template-Customize-Setting .customize_open_close {margin-left: 7px;}
+
+.Template-Customize-Setting .customize_open_close .fa {font-weight: 600;cursor: pointer;}
+
+.Template-Customize-Setting .customizer_innner_sections {float: left;width: 100%;margin: 0;padding: 10px;box-sizing: border-box;}
+
+.Template-Customize-Setting .Template-Customize-element {display: inline-block;width: 100%;margin: 0;padding: 0;vertical-align: middle;}
+
+.Template-Customize-Setting .Template-Customize-element-btn ,
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 .template_style.element_btn 
+{display: inline-block;background: #fff;color: #555;font-weight: bold;text-transform: capitalize;width: 100%;height: 40px;line-height: 40px;font-size: 14px;font-family: "Open Sans", sans-serif !important;text-align: left;border: 1px solid #dee8e8;border-radius: 4px;letter-spacing: 0;padding: 0 8px;margin: 0;}
+
+.Template-Customize-element-inner {padding: 10px 10px;margin: 0;display: inline-block;background: #fff;width: 100%;vertical-align: middle;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box {margin: 0;padding: 0;width: 100%;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box > h4 {font-size: 13px;color: #000;text-transform: capitalize;font-weight: 600;font-family: "Open Sans", sans-serif !important;letter-spacing: .5px;margin-bottom: 0px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box input, .Template-Customize-Setting .Template-Customize-element .inner_template_style_box select {height: 38px;font-size: 12px;background: #fff;border: 1px solid #ddd;padding: 0 10px;width: 100%;margin: 5px 0 0 0;min-height: 38px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box p {margin: 0;padding: 0;display: inline-block;width: 100%;vertical-align: middle;}
+
+.Template-Customize-Setting .Template-Customize-element + .Template-Customize-element {margin-top: 15px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box + .inner_template_style_box {margin-top: 13px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box .input-group {display: flex;flex-wrap: nowrap;margin-top: 5px;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box .input-group .input-group-addon i {height: 38px;width: 27px;margin-right: 0;border: 1px solid #c7c7c7;border-left: 1px solid #c7c7c7;display: inline-block;cursor: pointer;}
+
+.Template-Customize-Setting .Template-Customize-element .inner_template_style_box .input-group > input {margin: 0;}
+
+.Template-Customize-Setting .Template-Customize-element-btn.draggableElement i.fa, 
+.Template-Customize-Setting .Template-Customize-element-btn.draggableElement span.sub_heading ,
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 .template_style.element_btn i.fa ,
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 .template_style.element_btn span.sub_heading {font-size: 24px;margin: 0;color: #17d3b3;font-weight: 500;vertical-align: middle;width: 40px;display: inline-block;}
+
+.Template-Customize-content {float: left;width: 100%;margin: 20px 0;padding: 0 25px 0 0;max-width: calc(100% - 300px);max-width: -webkit-calc(100% - 300px);max-width: -moz-calc(100% - 300px);max-width: -ms-calc(100% - 300px);}
+
+.Template-Customize-setting-outer {float: right;width: 230px;margin: 0;padding: 0;max-width: 100%;}
+
+.Template-Customize-Setting .customizer_innner_sections.draggableElement_wrapper .Template-Customize-element1 + .Template-Customize-element1 {margin-top: 13px;}
+
+.Template-Customize-Setting .slider.slider-horizontal {width: 100% !important;}
+
+.Template-Customize-Setting .slider.slider-horizontal .slider-track {background: #478935;height: 2px;margin-top: -1px;}
+
+.Template-Customize-Setting .slider.slider-horizontal .slider-selection {background: #478935;}
+
+.Template-Customize-Setting .slider.slider-horizontal .slider-handle {position: absolute;top: 0px;margin-left: 0;width: 19px;height: 19px;background: #fff;background-image: none;border: 2px solid #478935;cursor: pointer;}
+
+/* End Template-Customize-Setting Design */
+
+.Template-Customize-setting-outer.social-btn-Customize-left {float: left;}
+
+.social-btn-Customize .social-btn-Customize-middle {width: 100%;float: left;max-width: calc(100% - 460px);text-align: center;margin: 0;padding: 0 20px;}
+
+.social-btn-Customize , .select-social-Customize {display: inline-block; margin: 15px 0 0 0; padding: 0; width: 100%; vertical-align: middle; } 
+
+.select-social-Customize {margin: 5px 0;}
+
+.select-social-Customize label {margin: 0;font-weight: 500;}
+
+/* Facebook Button*/
+
+.login_fb_btn, a.login_fb_btn:not([href]):not([tabindex]), 
+.login_twiter_btn, a.login_twiter_btn:not([href]):not([tabindex]) {max-width: 100%; width: auto; min-width: 50px; display: inline-block; margin: 0; padding: 0 15px; text-align: center; height: auto; background: #415dae; color: #fff; border-radius: 0; font-size: 20px; font-weight: normal; line-height: 50px; border: none; box-shadow: none; outline: none; text-decoration: none; cursor: pointer; }
+
+.login_fb_btn i.fa, .login_twiter_btn i.fa {margin: 0; padding: 0; display: inline-block; width: auto; font-size: 26px; vertical-align: middle; }
+
+.login_fb_btn:hover , .login_twiter_btn:hover {opacity: 0.8;text-decoration: none;}
+
+.login_twiter_btn , a.login_twiter_btn:not([href]):not([tabindex]) {background: #5fa4e5;}
+
+.social-btn-Customize {padding: 20px; background: #fff; border: 1px solid #eaeaea; display: flex; align-items: center; margin: 15px 0; }
+
+#social_share .quiz-content-card , .Quiz--tabs-outer #Quiz-TabContent #social_share .quiz-content-card {position: relative;padding-left: 48px !important;}
+
+.quiz-content-card >.QC-card-no {position: absolute;left: 0;top: 22px;width: 34px;height: 34px;display: inline-block;background: #b1b1b1;color: #fff;text-align: center;line-height: 34px;border-radius: 100%;border: none;font-weight: 600;font-size: 16px;z-index: 5;right: auto;bottom: auto; }
+
+.quiz_right-content .input-group .input-group-prepend .input-group-text {border-radius: 0;}
+
+.quiz_right-content .customize_social_share_wrapper , .quiz_right-content .input-group {max-width: 600px;}
+
+.quiz_right-content .input-group {flex-wrap: nowrap;}
+
+.quiz_right-content .input-group input[type="text"] {width: 100%;max-width: 100%;}
+
+
+/* Social media section css */
+
+.customize_social_share_wrapper , .customize_social_share_wrapper >label , .quiz-social-links {display: inline-block;width: 100%;margin: 0;padding: 0;vertical-align: middle;}
+
+.customize_social_share_wrapper {margin: 15px 0;text-align: center;}
+
+.customize_social_share_wrapper >label {font-weight: 600; line-height: 1.4; font-size: 15px; color: #444; font-family: 'DM Sans',sans-serif; max-width: 100%; margin: 0 0 10px; }
+
+.quiz-social-media-btn, .quiz-social-media-btn:not([href]):not([tabindex]) {max-width: 100%; width: auto; min-width: 90px; display: inline-block; margin: 0; padding: 0 15px; text-align: center; height: auto; background: #415dae; color: #fff; border-radius: 0; font-size: 26px; font-weight: normal; line-height: 50px; border: none; box-shadow: none; outline: none; text-decoration: none; cursor: pointer;margin: 0 8px;}
+
+.quiz-social-media-btn:hover , .quiz-social-media-btn:not([href]):not([tabindex]):hover {text-decoration: none;color: #fff;opacity: 0.8;outline: none;}
+
+.quiz-social-media-btn.quiz-twitter-btn, .quiz-social-media-btn.quiz-twitter-btn:not([href]):not([tabindex]) {background: #5fa4e5;}
+
+.quiz-social-media-btn.quiz-Facebook-btn , .quiz-social-media-btn.quiz-Facebook-btn:not([href]):not([tabindex]) {background: #415dae;}
+
+.fb_share_details_wrapper , .tw_share_details_wrapper{
+	max-width: 660px !important;
+}
+
+.customize_social_share_wrapper{
+    border: 1px solid #e9ecef;
+    padding: 14px;
+}
+
+
+#fb_share_details ,#tw_share_details, #share_text {    height: 100px;    max-width: 646px;}
+
+.dropdown.dropdown-custom-style.dropdown-overflow .dropdown-menu {max-width: 100%;overflow: hidden;overflow-y: auto;}
+
+
+.dropdown.dropdown-custom-style.dropdown-overflow .dropdown-menu .dropdown-item {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+#social_share .quiz_right-content .dropdown.dropdown-custom-style {max-width: 645px;}
+
+.quiz-content-card .fb_example_btn {display: inline-block; width: auto; border: 1px solid #17a2b8; padding: 10px 10px 8px; vertical-align: middle; font-size: 14px; color: #17a2b8; border-radius: 5px; line-height: normal; text-transform: uppercase; font-weight: 600; margin: 0 0 0 50px; }

@@ -1,0 +1,94 @@
+ .progress {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 100px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 0px 1px 1px rgba(0,0,0,.1);
+}
+.progress-bar {
+	/*float: left;*/
+	width: 0%;
+	height: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	text-align: center;
+	background-color: #337ab7;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	-webkit-transition: width .6s ease;
+	-o-transition: width .6s ease;
+	transition: width .6s ease
+}
+.progress-bar-striped,
+.progress-striped .progress-bar {
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	-webkit-background-size: 40px 40px;
+	background-size: 40px 40px
+}
+.progress-bar.active,
+.progress.active .progress-bar {
+	-webkit-animation: progress-bar-stripes 2s linear infinite;
+	-o-animation: progress-bar-stripes 2s linear infinite;
+	animation: progress-bar-stripes 2s linear infinite
+}
+.progress-bar-success {
+	background-color: #5cb85c
+}
+.progress-striped .progress-bar-success {
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+.progress-bar-info {
+	background-color: #5bc0de
+}
+.progress-striped .progress-bar-info {
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+.progress-bar-warning {
+	background-color: #f0ad4e
+}
+.progress-striped .progress-bar-warning {
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+.progress-bar-danger {
+	background-color: #d9534f
+}
+.progress-striped .progress-bar-danger {
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+
+/*Ranking Choice Frontend */
+.question_add_answer_outer_div .sqb_ans_item_outer.ranking_choices .sql_ans_text {position: relative;padding-left: 45px !important;}
+.question_add_answer_outer_div .sqb_ans_item_outer.ranking_choices .sql_ans_text::before {font-family: 'FontAwesome';position: absolute;left: 12px;top: 11px;bottom: auto;right: auto;font-size: 22px;line-height: 22px;color: #333;z-index: 2;content: "\f0dc";font-weight: normal;}
+.quiz_pagination_all .answer_container .sqb_ans_item_outer .sqb_ans_item.ans_type_ranking_choices .sqb_ans_item_inner .sql_ans_text::before {content: "\f0DC"; top: 6px; }
+#sqb_quiz_builder .Quiz-Template .answer_container .sqb_ans_item_outer.ranking_choices .sqb_ans_item.ans_type_ranking_choices {cursor: move;}
+
+.Quiz-Template.Quiz-Template-5 .Quiz-Template5-right-inner .answer_container .sqb_ans_item_outer.sqb_ans_selected.ranking_choices:before ,
+.Quiz-Template.Quiz-Template-5 .Quiz-Template5-right-inner .answer_container .sqb_ans_item_outer.sqb_ans_selected.ranking_choices:after {display:none}
+
+.Quiz-Template.Quiz-Template-5 .answer_container .sqb_ans_item_outer.sqb_ans_selected.ranking_choices .sqb_ans_item,
+.Quiz-Template.Quiz-Template-5 .answer_container:not(.question_type_slider_has):not(.image_option_has):not(.grid-layout-active) .sqb_ans_item_outer.sqb_ans_selected.ranking_choices:not(.text_cls) .sqb_ans_item {padding-left: 10px;}
+
+.Quiz-Template.Quiz-Template-5 .answer_container .sqb_ans_item_outer.sqb_ans_selected.ranking_choices .sqb_ans_item .sql_ans_text::before {font-size: 32px;left: 5px;top: 22px;}
+.question_type_ranking_choices.question_container {position: relative;}
+
+.question_type_ranking_choices .question_add_answer_outer_div  .sqb_ans_item_outer{
+   touch-action: none;
+   -ms-touch-action: none;
+}
+
+.sqb_quiz_container pwa-container-wrapper {
+    display: none;
+}

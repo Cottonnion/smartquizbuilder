@@ -1,0 +1,10 @@
+QuestionType,QuestionText,Description,Answer1,Answer2,Answer3,Answer4,Answer5,Answer6,Answer7,Answer8,Answer9,Answer10
+multiple_choice,Question 1. text,Question 1. description.,Answer title1,Answer title2,Answer title3,Answer title4,Answer title5,Answer title6,Answer title7,Answer title8,Answer title9,Answer title10
+single_choice,Question 2. text,Question 2. description.,Answer title1,Answer title2,Answer title3,Answer title4,Answer title5,Answer title6,Answer title7,Answer title8,Answer title9,Answer title10
+rating,Question 3. text,Question 3. description,1,2,3,4,5,,,,,
+ranking_choice,Question 4. text,Question 4. description,Answer title1,Answer title2,Answer title3,Answer title4,Answer title5,Answer title6,Answer title7,Answer title8,Answer title9,Answer title10
+yes_no,Question 5. text.,Question 5. description,Yes,No,,,,,,,,
+text,Question 6. text.,Question 6. description,,,,,,,,,,
+slider,Question 7. text,Question 7. description,,,,,,,,,,
+file_upload,Question 8. text,Question 8. description,,,,,,,,,,
+numerical_text,Question 9. text,Question 9. description,Answer title1,,,,,,,,,

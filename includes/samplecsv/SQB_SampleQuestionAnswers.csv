@@ -1,0 +1,9 @@
+QuestionType,QuestionText,Explanation,Answer1,"Correct Answer1","Points Answer1",Answer2,"Correct Answer2","Points Answer2",Answer3,"Correct Answer3","Points Answer3",Answer4,"Correct Answer4","Points Answer4",Answer5,"Correct Answer5","Points Answer5",Answer6,"Correct Answer6","Points Answer6",Answer7,"Correct Answer7","Points Answer7",Answer8,"Correct Answer8","Points Answer8",Answer9,"Correct Answer9","Points Answer9",Answer10,"Correct Answer10","Points Answer10"
+multiple_choice,"Question 1. text","Question 1. description.","Answer title1",Y,1,"Answer title2",Y,1,"Answer title3",Y,1,"Answer title4",Y,1,"Answer title5",Y,1,"Answer title6",N,1,"Answer title7",N,1,"Answer title8",N,1,"Answer title9",N,1,"Answer title10",N,1
+single_choice,"Question 2. text","Question 2. description.","Answer title1",N,1,"Answer title2",N,1,"Answer title3",N,1,"Answer title4",N,1,"Answer title5",Y,1,"Answer title6",N,1,"Answer title7",N,1,"Answer title8",N,1,"Answer title9",N,1,"Answer title10",N,1
+rating,"Question 3. text","Question 3. description",1,N,1,2,N,1,3,N,1,4,N,1,5,Y,1
+ranking_choice,"Question 4. text","Question 4. description","Answer title1",N,1,"Answer title2",N,1,"Answer title3",N,1,"Answer title4",N,1,"Answer title5",Y,1,"Answer title6",N,1,"Answer title7",N,1,"Answer title8",N,1,"Answer title9",N,1,"Answer title10",N,1
+yes_no,"Question 5. text.","Question 5. description",Yes,N,1,No,N,1
+text,"Question 6. text.","Question 6. description"
+slider,"Question 7. text","Question 7. description"
+file_upload,"Question 8. text","Question 8. description"

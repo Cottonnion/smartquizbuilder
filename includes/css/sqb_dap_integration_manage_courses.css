@@ -1,0 +1,249 @@
+#manage_students_list_table .icon_btn a.view_manage_student_btn{width: auto; padding: 5px 10px; margin: 0; vertical-align: middle; font-size: 14px; text-transform: uppercase; font-weight: 700; height: auto; line-height: normal; text-decoration: none; outline: none; display: inline-block;}
+
+/*#manage_students_list_table .icon_btn a.view_manage_student_btn:hover {opacity: 0.8; text-decoration: none; color: #fff; background-color: #F44336; border-color: #F44336; }*/
+
+#manage_students_list_table .create_product_inner .icon_btn {text-align: center; }
+
+#manage_students_list_table .create_product_inner{background: #fcfcfc;}
+
+#manage_students_list_table .create_product_inner .product_detail h2 {font-weight: 800;}
+
+#manage_students_list_table .create_product_inner .product_detail h2 {font-weight: 700; }
+
+#manage_student_outer .manage_student_heading,
+#manage_quizzes_outer .manage_student_heading {margin: 0 0 30px 0; padding: 0; background: none; height: auto; text-align: left; font-size: 20px; font-weight: 600; line-height: normal; } 
+
+#manage_student_outer .manage_student_heading i.fa,
+#manage_quizzes_outer .manage_student_heading i.fa {margin-right: 13px; font-size: 120%; display: inline-block; vertical-align: middle; }
+
+#manage_student_outer #manage_student_table_outer {width: 100%; margin: 0 0 15px 0; padding: 0; display: inline-block; vertical-align: middle; } 
+
+#manage_student_table_outer table.table ,
+#manage_quizzes_outer table.table{border-bottom: none; margin-bottom: 20px; border-collapse: collapse; width: 100%; margin: 0 auto; clear: both; border-spacing: 0;background-color: #fff;} 
+
+#manage_student_table_outer table.table td, #manage_student_table_outer table.table th ,
+#manage_quizzes_outer table.table td, #manage_quizzes_outer table.table th {padding: 12px 10px; vertical-align: middle; border: 1px solid#dee2e6; font-size: 14px; line-height: normal; margin: 0; color: #212529; text-align: left; } 
+
+#manage_student_table_outer table.table thead th ,
+#manage_quizzes_outer table.table thead th {vertical-align: bottom; padding: 15px 10px; /*border-top: 3px solid #f05451;*/ color: #333; background-color: #f5f5f5;font-size: 15px;} 
+
+.result-data-block {background: #f9f9f9; padding: 15px; margin: 10px 0; font-size: 14px; line-height: normal; color: #333;position: relative;} 
+
+.result-data-block .result-data-card , #manage_student_outer .manage_student_card ,
+#manage_quizzes_outer .manage_student_card {display: flex; align-items: flex-start; width: 100%; margin: 0 0 10px 0; padding: 0 0 10px 0; border: none; } 
+
+.result-data-block .result-data-card label , #manage_student_outer .manage_student_card label ,
+#manage_quizzes_outer .manage_student_card label {font-weight: 600; line-height: 1.4; font-size: 15px; color: #444; font-family: 'DM Sans',sans-serif; width: 140px; max-width: 140px; flex-basis: 140px; margin: 0 !important; } 
+
+#quiz-course-accordion {display: inline-block; width: 100%; clear: both; margin: 0; padding: 0; } 
+
+#quiz-course-accordion .card {width: 100%; margin: 0; max-width: 100%; padding: 0; background: #fff; border: none; border-radius: 0; /* box-shadow: 0 0 7px 2px rgb(0 0 0 / 0.13); */ }
+
+#quiz-course-accordion .card + .card {margin-top: 20px; } 
+
+#quiz-course-accordion .card .card-header {padding: 0; border: none; margin: 0; background: none; }
+
+#quiz-course-accordion .card .card-header .btn-link {margin: 0; font-size: 16px; padding: 10px 40px 10px 15px; line-height: 1.5; color: #f56640; font-weight: 700; width: 100%; text-align: left; background: #f1f1f1; position: relative; border-radius: 0; }
+
+#manage_student_table_outer table.table td > .btn,
+#manage_quizzes_outer table.table td > .btn  {width: auto; padding: 5px 10px; margin: 0; vertical-align: middle; font-size: 13px; text-transform: uppercase; font-weight: 600; height: auto; line-height: normal; border-radius: 5px; text-decoration: none; outline: none; display: inline-block; background: #fff; border: 1px solid #24a0f6; color: #24a0f6; }
+
+#manage_student_table_outer table.table td >.btn.view-result-link,
+#manage_quizzes_outer table.table td >.btn.view_detail_btn {border: 1px solid #24a0f6;background-color: transparent;}
+
+#manage_student_table_outer table.table td >.btn.view-result-link:hover,
+#manage_quizzes_outer table.table td >.btn.view_detail_btn:hover {opacity: 0.8; text-decoration: none; color: #fff; background-color: #24a0f6; border-color: #24a0f6; }
+
+#manage_student_table_outer table.table td >.btn.btn-danger {border-color: #dc3545; background: #dc3545; color: #fff; }
+
+#manage_student_table_outer table.table td >.btn.btn-danger:hover {opacity: 0.7;text-decoration: none;}
+
+.course_shortcodes_tabouter .tab-pane#manage_students ,
+.course_shortcodes_tabouter .tab-pane#dap_sqb_manage_quizses{border: none;}
+
+#manage_student_table_outer #quiz-course-accordion .card table.table thead th {background-color: #f9f9f9;}
+
+#quiz-course-accordion .card .card-header .btn-link::after {content: "\f056"; font-family: FontAwesome; position: absolute; right: 8px; top: 8px; bottom: auto; font-size: 26px; height: 30px; width: 30px; text-align: center; line-height: 30px; color: #f56640;z-index: 2;margin-right: 18px;}
+
+#quiz-course-accordion .card .card-header .btn-link.collapsed::after {content: "\f055";}
+
+#quiz-course-accordion .card .card-header .btn-link:hover {text-decoration: none !important; background: #000; }
+
+
+.dropdown.dropdown-custom-style {width: 200px;min-width: 200px;margin: 0;padding: 0;}
+
+.dropdown.dropdown-custom-style > .dropdown-toggle::after {position: absolute;right: 8px;top: 17px;z-index: 1;}
+
+.dropdown.dropdown-custom-style > .dropdown-toggle {border: 1px solid #ddd;height: 30px;padding: 6px 25px 6px 10px;min-height: 42px;border-radius: 0;font-weight: 500;color: #444;max-width: 100%;width: 100%;box-sizing: border-box;box-shadow: 0 0 0 transparent;background-color: #fff;font-size: 14px;outline: none;text-align: left;position: relative; max-width: 566px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.multi-correct-option {margin: 0 0 0 15px;padding: 0;width: auto;}
+
+.dropdown.dropdown-custom-style .dropdown-menu {min-width: 100%; border-radius: 0; margin: 0; padding: 5px 0; }
+
+.dropdown.dropdown-custom-style .dropdown-menu li, .dropdown.dropdown-custom-style .dropdown-menu li a {margin: 0; padding: 0; width: 100%; float: left; font-size: 14px; color: #444; font-weight: 500; line-height: normal; }
+
+.dropdown.dropdown-custom-style .dropdown-menu li a {padding: 5px 10px;text-decoration: none;}
+
+.dropdown.dropdown-custom-style .dropdown-menu li a:hover {background-color: #f5f5f5;color: #333;}
+
+#manage_student_outer .manage_student_card {align-items: center;}
+
+/*#manage_student_outer .manage_student_card .manage_student_card_right {width: 100%;max-width: calc(100% - 150px);}*/
+
+#manage_student_outer .manage_student_card .manage_student_card_right .dropdown.dropdown-custom-style,
+#manage_quizzes_outer .manage_student_card .manage_student_card_right .dropdown.dropdown-custom-style {width: 300px;min-width: 300px;}
+#manage_student_outer .manage_student_card .manage_student_card_right #dapselect_course_filter{width: 116px;min-width: 116px;}
+
+
+
+.Manage_Side_Popup {width: 700px; max-width: 85%; border: none; position: fixed; top: 0; bottom: 0; background: #fff; height: 100vh; z-index: 9999; padding: 0; right: -110%; left: auto; visibility: visible; opacity: 0; -webkit-transition: all 0.5s linear; -moz-transition: all 0.5s linear; -o-transition: all 0.5s linear; -ms-transition: all 0.5s linear; transition: all 0.5s linear; }
+
+.Manage_Side_Popup.active_Side_Popup {right: 0;visibility: visible;opacity: 1;}
+
+.Manage_Side_Popup h2 {font-family: 'DM Sans',sans-serif;padding: 15px 20px;border: none;margin: 0;background: none;font-size: 22px;line-height: 1.4;color: #ffffff;background-color:#f56640;font-weight: 500;border-bottom: 1px solid #eee;position: relative;}
+
+.Manage_Side_Popup .Manage_Side_Popup_content {margin: 8px 0 0 0;padding: 0;width: 100%;display: inline-block;vertical-align:middle;font-size: 16px;line-height: 1.4;color: #212529;font-family: 'DM Sans',sans-serif;font-weight: normal;overflow-x: auto;height: 100%;max-height: calc(100% - 65px);max-height: -webkit-calc(100% - 65px);max-height: -moz-calc(100% - 65px);max-height: -ms-calc(100% - 65px);}
+
+.Manage_Side_Popup .Manage_Side_Popup_content > h4 {font-family: 'DM Sans',sans-serif; padding: 0 0 10px 0; border: none; margin: 5px 0 0 0; background: none; font-size: 15px; line-height: 1; color: #171717; background-color: transparent; font-weight: 600; border-bottom: 0px solid #eee; position: relative; float: left; }
+
+.Manage_Side_Popup .close_Side_Popup {position: absolute; right: 8px; top: 12px; width: 34px; height: 34px; background: #fff; text-align: center; color: #989898; font-size: 24px; line-height: 32px; margin: 0; padding: 0; border: none; border-radius: 100%; z-index: 66; outline: none; box-shadow: none; } 
+
+.Manage_Side_Popup .close_Side_Popup i.fa {vertical-align: middle; line-height: 32px; }
+
+.Manage_Side_Popup.active_Side_Popup::before {position: fixed; content: ""; left: 0; right: 0; top: 0; bottom: 0; z-index: 99; background: #333; opacity: 0.5; }
+
+.Manage_Side_Popup-inner {position: relative; background: #fff; height: 100%; z-index: 99; box-shadow: 0px 0 10px 0px #33333373; padding: 0; text-align: left; overflow: visible; }
+
+.Manage_Side_Popup-inner b, .Manage_Side_Popup-inner strong {font-weight: bolder;font-size: 15px;float: left;}
+
+.Side_Popup_card_outer {display: inline-block;width: 100%;margin: 5px 0;padding: 0;}
+
+.Side_Popup_card {display: inline-block;width: 100%;margin: 0;padding: 6px 0;vertical-align: middle;}
+
+.Manage_Side_Popup .Manage_Side_Popup_content .Side_Popup_card {padding-left: 25px;padding-right: 25px;}
+
+.Manage_Side_Popup .Manage_Side_Popup_content .small_heading {font-size: 18px;color: #f56640;}
+
+.Side_Popup_card .full_wid {width: 100%;}
+
+.Side_Popup_card > label, #customizer_button_outer .form-group .Side_Popup_card >label, 
+#customizer_button_outer .Side_Popup_card >label {width: auto;margin: 0 20px 0 0;font-size: 14px;font-weight: 600;float: none;display: inline-block;}
+
+.Side_Popup_card > p {margin: 0;font-size: 14px;font-weight: 400;display: inline-block;}
+
+.Side_Popup_card .sqb_user_question_answer_reset_by_id {width: auto;padding: 4px 10px;margin: 0;vertical-align: middle;font-size: 14px;text-transform: uppercase;font-weight: 700;height: auto;line-height: normal;border-radius: 5px;text-decoration: none;outline: none;display: inline-block;background: #fff;border: 1px solid #af0202;color: #af0202;white-space: nowrap;cursor: pointer;}
+
+.Side_Popup_card .sqb_user_question_answer_reset_by_id:hover {background: #af0202;border-color: #af0202;color: #fff;}
+
+.Side_Popup_card .user_email1 .sqb_user_question_answer_reset_by_id {margin-left: 25px;}
+
+.Side_Popup_card_outer:nth-child(2n) {background: #f7f7f7;padding-top: 13px;padding-bottom: 13px;}
+
+.Manage_Side_Popup_content .card {width: 100%; float: left; max-width: 100%; margin: 0%; padding: 0; margin-bottom: 10px; }
+
+.Manage_Side_Popup_content .res_data_cont .card-header {padding: 10px 12px; height: auto; background-color: #5f98f7; box-shadow: none; color: #fff; text-align: left; font-size: 16px; font-weight: normal; line-height: normal; border: none; }
+
+.Manage_Side_Popup_content .res_data_cont .card-header .ques_contain {display: flex; flex-wrap: nowrap; line-height: normal; margin: 0; float: left; width: 100%; }
+
+.Manage_Side_Popup-inner b, .Manage_Side_Popup-inner strong {font-weight: bolder;font-size: 15px;float: left;}
+
+.Manage_Side_Popup_content .res_data_cont .card-header .ques_contain b {white-space: nowrap;}
+
+.Manage_Side_Popup_content .res_data_cont .card-header .ques_contain label, 
+.Manage_Side_Popup_content .ans_text1, .Manage_Side_Popup_content .result_inn {font-size: 15px;}
+
+.Manage_Side_Popup_content .res_data_cont .card-header .ques_contain, 
+.Manage_Side_Popup_content .res_data_cont .card-header .ques_contain label {line-height: normal; margin: 0 !important; }
+
+.Manage_Side_Popup_content .res_data_cont .card-body {padding: 8px;float: left;}
+
+.export-option-list {display: inline-block; width: 100%; margin: 0; padding: 0; vertical-align: middle; border-bottom: 0px dashed #e6e6e6; padding-bottom: 0px; margin-bottom: 0px; }
+
+.Manage_Side_Popup_content .ans_text1, .Manage_Side_Popup_content .result_inn {width: 100%;float: left;}
+
+.export-option-list .sqb_ans_item, .Manage_Side_Popup_content .result_inn {padding-left: 5px; float: left; width: auto; }
+
+.result-data-block .close {border-radius: 50%; height: 28px; width: 28px; box-shadow: 0 3px 3px rgba(0,0,0,0.4); cursor: pointer; z-index: 1004; position: absolute; opacity: 1; color: #fff; font-weight: 300; font-size: 26px; background: #555; right: -4px; top: -6px; margin: 0; padding: 0; outline: none; text-align: center; line-height: 28px; }
+
+#manage_student_table td#dap_table_no_recods, #manage_student_table_outer td#dap_table_no_recods{text-align:center;}
+
+#manage_student_outer a.dropdown-item, #manage_student_outer a.dropdown-item:active{ color: #3f51b5;}
+
+#customizer_button_outer .manage_student_card .btn_custom.manage_courses_list_view_btn ,
+#manage_student_outer .btn_custom.manage_courses_list_view_btn {float: none; font-size: 16px; border: none; color: #fff; font-weight: 600; display: inline-block; border-radius: 4px; box-shadow: none; outline: none; background: #3F51B5 !important; padding: 10px 25px !important;line-height: normal;}
+
+.Side_Popup_card_outer.quiz_details_wrapper {border-top: 1px solid #8a8a8a; margin-top: -5px; padding-top: 18px; }
+
+#manage_student_outer .manage_student_card.filter_manage_student_card .manage_student_card_right {padding-right: 30px;padding-left: 10px;}
+
+.result-data-block .result-data-card .filter_manage_student_card label, 
+#manage_student_outer .manage_student_card.filter_manage_student_card label {width: auto;max-width: 140px;flex-basis: auto;white-space: nowrap;}
+
+#manage_student_outer .manage_student_card.filter_manage_student_card .manage_student_card_right input.form-control {min-width: 300px; width: 300px; max-width: 300px; }
+
+#manage_student_outer .flex-leftside .manage_student_heading {margin: 0; }
+
+.manage_student_card.filter_manage_student_card .btn.search--btn {background: none; color: #17a2b8; font-size: 16px; padding: 0 28px; line-height: 42px; font-weight: 600; border: 1px solid #17a2b8; }
+
+.manage_student_card.filter_manage_student_card .btn.search--btn:hover {background: #17a2b8; color: #fff;}
+
+#manage_student_outer .manage_student_card.filter_manage_student_card .manage_student_card_right input.form-control ,
+.filter_manage_student_card .dropdown.dropdown-custom-style > .dropdown-toggle
+{border-color: #3f51b5;}
+
+#dap_table_no_recods_div {padding: 25px 13px; text-align: center; font-size: 24px; font-weight: 600; display: inline-block; width: 100%; max-width: 100%; color: #444444; border-radius: 0; line-height: normal; background: #eaeaea; }
+
+.Side_Popup_card_outer  .sqb_user_question_answer_reset_by_id{margin-left: 11px;font-size: 15px;}
+
+.sqb_user_question_answer_reset_by_id_confirm_box{width: 839px;}
+
+#manage_student_table td a.btn.btn-danger.sqb_dap_reset_btn {margin-left: 10px !important;}
+
+.manage_student_msg_div{display: inline-block;width: auto;border: 1px solid #43bbdf;padding: 16px;border-left: 3px solid #43bbdf;background: #effafd;font-size: 15px;font-weight: 600;border-radius: 5px;color: #000;margin-bottom: 35px !important;float: left;}
+
+.manage_student_msg_div p {font-family: 'Open Sans', sans-serif;font-size: 15px;font-weight: 500;padding: 0;margin: 0;line-height:normal;}
+
+
+.sort-options {max-width: 360px;margin: 5px 0 0 0;}
+
+.sort-options label {width: auto;max-width: none;flex-basis: auto;white-space: nowrap;margin: 0 15px 0 0 !important;display: inline-block;vertical-align: middle;}
+
+.sort-options .dropdown.dropdown-custom-style {width: 260px;min-width: auto;max-width: 100%;display: inline-block;vertical-align: middle;}
+
+.sort-options .dropdown.dropdown-custom-style > .dropdown-toggle {border-color: #3f51b5;}
+#manage_students_list_table tbody#manage_products_list tr td {width: 25%; min-width: 25%;}
+#manage_student_table_outer table.table td > .btn {min-width: 70px;}
+
+/*01-06-2021*/
+.sqb_dap_course_name_img{display: flex;}
+
+.sqb_dap_course_name_img .sqb_dap_course_img{margin-right: 10px;}
+
+.create_product_inner{border:2px solid transparent;transition: all .4s;}
+
+.create_product_inner:hover {transform: scale(1.05);}
+
+.create_product_inner .manage_student_btn{border: 2px solid #f6704d!important;color: #f6704d!important;font-size: 14px;
+    border-radius: 5px;padding: 5px 10px;font-weight: 700;font-family: 'Open Sans', sans-serif;outline: none;-webkit-box-shadow: none!important; box-shadow: none!important; margin-top:10px!important;
+}
+
+#manage_students_list_table tr{vertical-align: top;}
+
+.manage_student_heading.dataTables_filter {position: absolute;left: 0;text-align: left;font-size: 20px;z-index: 1;font-weight: 600;    line-height: normal;}
+
+#dap_product_table_outer{position: relative;}
+
+#manage_students_list_table .sqb_dap_course_name {font-weight: 600;font-size: 15px;}
+#manage_students_list_table .sqb_dap_course_img img {    width: 100px;    height: 100px;}
+
+  #quiz-course-accordion .card {background: none;padding: 0;}
+
+  #quiz-course-accordion .card .card-body {padding: 0;}
+
+ #quiz-course-accordion .card .spc-card_box {background: #ffffff;margin-bottom: 20px;}
+
+ #quiz-course-accordion .selected-course-info {display: inline-block; width: 100%; margin: 10px 0 10px 0; padding: 0; vertical-align: middle; }
+
+.selected-course-info label {    max-width: 138px;    width: 138px;    font-size: 17px;    margin: 0;    color: #333;    color: #0f2e47;  font-family: 'DM Sans',sans-serif!important;
+    font-weight: 600;    padding: 0 0 0 15px; }
+.selected-course-info .selected-course-name , .selected-course-info .selected-lesson-name{  margin: 0;  color: #333;    font-size: 16px;    font-weight: 500;  }
