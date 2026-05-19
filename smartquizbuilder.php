@@ -28,13 +28,7 @@ require_once(WP_PLUGIN_DIR . "/smartquizbuilder/sqb_data_sql.php");
 //	require_once(WP_PLUGIN_DIR . "/smartquizbuilder/smartquizbuilder-update/smartquizbuilder.php");
 //}
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/smartquizbuilder-update/plugin-update-checker/plugin-update-checker.php' ) ) {
-  if (!class_exists('Puc_v4_Factory')) {
-    require_once dirname( __FILE__ ).'/smartquizbuilder-update/plugin-update-checker/plugin-update-checker.php';
-  }
-  
-  require_once(plugin_dir_path(__FILE__)."smartquizbuilder-update/smartquizbuilder.php");
-}
+// Auto-updater / phone-home removed: sent domain + license key to wickedcoolplugins.com without consent
 
 
 require_once (plugin_dir_path(__FILE__)."smartquizbuilder_classes.php");

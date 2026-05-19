@@ -2703,8 +2703,8 @@ function SQBAddUserAjax(){
 	$msg = "";
 	if(isset($_POST)){
 			
-		$first_name = $_POST['first_name'];
-		$email = $_POST['email'];
+		$first_name = sanitize_text_field($_POST['first_name']);
+		$email = sanitize_email($_POST['email']);
 		$remove_char_http = array("https://", "http://", "/");
 		$get_site_name = str_replace($remove_char_http, "", site_url());
 		

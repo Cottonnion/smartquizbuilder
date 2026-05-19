@@ -28,9 +28,10 @@
 					t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 					document,'script','//connect.facebook.net/en_US/fbevents.js');
 					//fbq('init', '<?php echo $fbAppId; ?>');	
-					fbq('init', '966561857113077');	
+					// Removed: hardcoded developer pixel ID (966561857113077) was sending purchase events to developer's ad account
+					fbq('init', '<?php echo esc_js($fbAppId); ?>');	
 					
-fbq('track', 'Purchases', {value: '17', currency: 'USD', content_name: 'test', content_category: 'PageView' , content_ids: ['test_name'], content_type: 'product', num_items: '1'});			
+fbq('track', 'PageView');
 </script>
 
 <style>

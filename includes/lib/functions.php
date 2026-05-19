@@ -102,20 +102,19 @@ function SQBSaveStudentShortcodeAjax(){
 
 
 add_action('wp_ajax_sqblicense_save_wcp', 'sqblicense_save_wcp');
-add_action('wp_ajax_nopriv_sqblicense_save_wcp', 'sqblicense_save_wcp');
 
 function sqblicense_save_wcp(){
-	$key = $_REQUEST['key'];
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
+	$key = sanitize_text_field($_REQUEST['key']);
 	update_option( 'wcp_licenseKey', $key );
 }
 
 
 
 add_action('wp_ajax_sqb_send_top_outcomes_delete', 'SQBSendTopOutcomesDeleteAjax');
-add_action('wp_ajax_nopriv_sqb_send_top_outcomes_delete', 'SQBSendTopOutcomesDeleteAjax');
 
 function SQBSendTopOutcomesDeleteAjax(){
-	
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
 	if(isset($_POST['id'])){
 		$id = $_POST['id'];
 		SQB_OutcomeRankMapping::delete($id);
@@ -130,10 +129,9 @@ function SQBSendTopOutcomesDeleteAjax(){
 }	
 
 add_action('wp_ajax_sqb_send_top_outcomes_save', 'SQBSendTopOutcomesSaveAjax');
-add_action('wp_ajax_nopriv_sqb_send_top_outcomes_save', 'SQBSendTopOutcomesSaveAjax');
 
 function SQBSendTopOutcomesSaveAjax(){
-	
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
 	if(isset($_POST['quiz_id'])){
 		$quiz_id = $_POST['quiz_id'];
 		$custom_field_name = $_POST['custom_field_name'];
@@ -1470,11 +1468,10 @@ function sqbGetLoaderHtml(){
 }
 
 add_action('wp_ajax_sqb_save_zapier_url', 'SQBSaveZapierUrlAjax');
-add_action('wp_ajax_nopriv_sqb_save_zapier_url', 'SQBSaveZapierUrlAjax');
 
 function SQBSaveZapierUrlAjax(){
-	
-	$zapier_url = $_POST['zapier_url'];
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
+	$zapier_url = esc_url_raw($_POST['zapier_url']);
 	$quiz_id = $_POST['quiz_id'];
 	$autoresponder_name = 'zapier';
 	
@@ -1507,11 +1504,10 @@ function SQBSaveZapierUrlAjax(){
 }
 
 add_action('wp_ajax_sqb_save_googlespreadsheet_url', 'SQBSavegooglespreadsheetUrlAjax');
-add_action('wp_ajax_nopriv_sqb_save_googlespreadsheet_url', 'SQBSavegooglespreadsheetUrlAjax');
 
 function SQBSavegooglespreadsheetUrlAjax(){
-	
-	$googlespreadsheet_url = $_POST['googlespreadsheet_url'];
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
+	$googlespreadsheet_url = esc_url_raw($_POST['googlespreadsheet_url']);
 	$quiz_id = $_POST['quiz_id'];
 	$autoresponder_name = 'googlespreadsheet';
 	
@@ -1545,9 +1541,9 @@ function SQBSavegooglespreadsheetUrlAjax(){
 
 
 add_action('wp_ajax_sqb_save_webhook_url', 'SQBSaveWebhookUrlAjax');
-add_action('wp_ajax_nopriv_sqb_save_webhook_url', 'SQBSaveWebhookUrlAjax');
 
 function SQBSaveWebhookUrlAjax(){
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
 	
 	$webhook_url = $_POST['webhook_url'];
 	$quiz_id = $_POST['quiz_id'];
@@ -1690,7 +1686,6 @@ function SQBSaveScpExternalPlateformAjax(){
 
 
 add_action('wp_ajax_sqb_qutomation_save', 'SQBSaveAutomationAjax');
-add_action('wp_ajax_nopriv_sqb_qutomation_save', 'SQBSaveAutomationAjax');
 
 
 function SQBgetActiveCampaignLists($url , $key){
@@ -3322,9 +3317,7 @@ function SQBgetDripCampaignLists($api_token = '',$client_id = ''){
 
 /* Save automation key */
 function SQBSaveAutomationAjax(){
-	
-	
-	
+	if(!current_user_can('administrator')) { wp_send_json_error('Unauthorized', 403); die; }
 	if(isset($_POST)){
 		$autoresponder = strtoupper($_POST['autoresponder_name']); 
 		
