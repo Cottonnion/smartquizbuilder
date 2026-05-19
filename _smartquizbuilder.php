@@ -88,7 +88,7 @@ function sqb_manage_leads(){
 function smartquizbuilder(){
   require_once plugin_dir_path(__FILE__) . 'includes/admin/sqb_layout.php';
 }
-$wcpDomain="www.wickedcoolplugins.com";
+// $wcpDomain removed: was used for phone-home license checks
 
 function sqb_add_quiz(){
   //require_once plugin_dir_path(__FILE__) . 'includes/admin/sqb_add_quiz.php';
@@ -107,7 +107,7 @@ function sqb_student_home(){
   require_once plugin_dir_path(__FILE__) . 'includes/admin/sqb_layout.php';
 }
 
-$a2 = "ValidateLicense";
+// $a2 removed
 
 function sqb_create_student_page(){
   require_once plugin_dir_path(__FILE__) . 'includes/admin/sqb_layout.php';

@@ -38,21 +38,7 @@ $wcpDomain = "www.wickedcoolplugins.com";
 $whoAmI = "SQB";
 $wcplicense =  get_option('wcp_licenseKey');
 //echo $wcplicense;
-$showeditor=true;
-if ( !isset($wcplicense) || ($wcplicense == null) || ($wcplicense == "") )  {
-	$showeditor=false;
-}
-@session_start();
-//check license
-if( !isset($_SESSION[$whoAmI]) || ($_SESSION[$whoAmI] != $whoAmI) ) {
-	//echo("responseKey not in session, or not set for this plugin - so making licensing call"); 
-	if( !SQBCheckFOpen($whoAmI,$wcplicense) ) {
-		if(isset($_SESSION['responseKey'])){
-			unset($_SESSION['responseKey']);
-		}
-		$showeditor=false;
-	}
-}
+$showeditor = true; // Licensing check bypassed
 if($showeditor == false)
 { ?>
 <script>

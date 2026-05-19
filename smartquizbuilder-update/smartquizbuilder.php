@@ -137,35 +137,8 @@ if (!class_exists('SQB_Utils')) {
 }
 
 
-$wcpDomainSQB = "https://wickedcoolplugins.com";
-$api_url_sqb = $wcpDomainSQB."/pluginupdater/autoupdateSQBNew.php";
-$plugin_slug_sqb = "smartquizbuilder";
-$sqbVersion = SQB_VERSION;
-$domain = getSQBUrlToDomainName(site_url()); 
-$licenseKey = get_option('wcp_licenseKey', true);
-$productNick = 'SQB';
-
-$request_args = array(
-        'slug' => $plugin_slug_sqb,     
-        'version' => $sqbVersion,
-        'domain' => trim($domain),
-        'lk' => trim($licenseKey),
-        'pn' => trim($productNick),
-    );
-
-$api_url_with_params = add_query_arg(
-    $request_args,
-    $api_url_sqb
-);
-
-if (class_exists('Puc_v4_Factory') && method_exists('Puc_v4_Factory', 'buildUpdateChecker')) {
-    $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-      $api_url_with_params,
-      SQB_PLUGIN_FILE, //Full path to the main plugin file or functions.php.
-      $plugin_slug_sqb
-    );
-}
-
+// Phone-home removed: previously sent domain + license key to wickedcoolplugins.com/pluginupdater/autoupdateSQBNew.php
+// $wcpDomainSQB = "https://wickedcoolplugins.com";
 
 function getSQBUrlToDomainName($url) {
     $domain = preg_replace('/https?:\/\/(www\.)?/', '', $url);
