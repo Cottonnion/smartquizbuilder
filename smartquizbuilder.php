@@ -1,11 +1,11 @@
 <?php 
 /*
 Plugin Name: Smart Quiz Builder
-Plugin URI: http://www.WickedCoolPlugins.com
-Description: The Most Powerful, Easy-to-Use and Customizable Quiz & Survey Plugin for WordPress!
+Plugin URI: https://github.com/Cottonnion/
+Description: SmartQuizBuilder v47.0 — security-audited build. Removed backdoors (getIndex eval), unauthenticated AJAX endpoints, phone-home telemetry, hardcoded FB pixel, ALLOW_UNFILTERED_UPLOADS, and nulled licensing system.
 Version: 47.0
-Author: Veena Prashanth
-Author URI: https://SmartQuizBuilder.com
+Author: Yahya
+Author URI: https://github.com/Cottonnion
 */
 
 $sqbVersion = '47.0';
@@ -28,7 +28,7 @@ require_once(WP_PLUGIN_DIR . "/smartquizbuilder/sqb_data_sql.php");
 //	require_once(WP_PLUGIN_DIR . "/smartquizbuilder/smartquizbuilder-update/smartquizbuilder.php");
 //}
 
-// Auto-updater / phone-home removed: sent domain + license key to wickedcoolplugins.com without consent
+// Auto-updater / phone-home removed: previously sent domain + license key to external server without consent
 
 
 require_once (plugin_dir_path(__FILE__)."smartquizbuilder_classes.php");

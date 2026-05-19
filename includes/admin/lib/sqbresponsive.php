@@ -23,14 +23,12 @@ if(!function_exists('getHost')) {
 }
 if(!function_exists('sendLicensingErrorEmail')) {
   function sendLicensingErrorEmail($subject,$body) {
-	  $fromName = "WickedCoolPlugins";
-	  $fromEmail = "WickedCoolPlugins@WickedCoolPlugins.com";
-	  @mail("wcp@wickedcoolplugins.com",$subject,$body,"From:\"WickedCoolPlugins\"<wco@WickedCoolPlugins>");
-	  return;
+      // Nulled: phone-home removed
+      return;
   }
 }
 
-$wcpDomain = "www.wickedcoolplugins.com";
+$wcpDomain = "";
 
 ?>
 <?php $ajaxurl = admin_url('admin-ajax.php'); ?>
@@ -77,7 +75,7 @@ function sqblicense_save_wcp(){
 <table cellspacing="0" cellpadding="0" style="width:60%;">
   <thead>
     <tr>
-      <th width="40%" >Enter WCP License Key <br/>(Click <strong><a href="http://wickedcoolplugins.com/my-account/"> HERE </a></strong> to get your WCP License Key)</th>
+      <th width="40%" >Enter License Key</th>
       <th width="35%"></th>
       <th width="25%"></th>
     </tr>

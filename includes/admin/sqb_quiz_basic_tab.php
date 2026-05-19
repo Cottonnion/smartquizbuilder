@@ -5732,7 +5732,7 @@ Smart Quiz Builder will display the result screen and won't redirect</span>
 			?>
 			<input type="hidden" value="<?php echo $check_pdf_plugin; ?>" class="check_pdf_plugin">
 			<div class="alert alert-v2 alert-danger certificate-pdf-plugin-error" role="alert" style="<?php echo $certificate_pdf_plugin; ?>">
-			  	<p>We notice you have not installed/activated SQB PDF Plugin. You can download it from your member's area <a target="_blank" href="https://wickedcoolplugins.com/login">here.</a></p>
+			  	<p>We notice you have not installed/activated SQB PDF Plugin.</p>
 				<p>This plugin is required to use the PDF reports feature.</p>
 			</div>
 	<div class="quiz-content-card download-certificate-child border-bottom-0 pb-0" style="display:<?php if($quiz_allow_certificate == 'Y'){ echo "block"; } else { echo "none"; } ?>">
@@ -5842,7 +5842,7 @@ Smart Quiz Builder will display the result screen and won't redirect</span>
 			</div>	
 
 			<div class="alert alert-v2 alert-danger pdf-plugin-error" role="alert" style="<?php echo $pdf_plugin; ?>">
-			  	<p>We notice you have not installed/activated SQB PDF Plugin. You can download it from your member's area <a target="_blank" href="https://wickedcoolplugins.com/login">here.</a></p>
+			  	<p>We notice you have not installed/activated SQB PDF Plugin.</p>
 				<p>This plugin is required to use the PDF reports feature.</p>
 			</div>
 					
@@ -6431,7 +6431,7 @@ Smart Quiz Builder will display the result screen and won't redirect</span>
 				<ul>
 					<li><span><strong>We notice that you have not installed the "SQB Google Sheet Integration" plugin that's required to use this integration.</strong></span></li>
 					<li><span><strong>Please follow these steps.</strong> </span></li>
-					<li><span>Download the "SQB Google Sheet Integration" plugin from your members area. <a href="https://wickedcoolplugins.com/login" target="_blank">Click here</a> to login and download.</span></li>
+					<li><span>Download the "SQB Google Sheet Integration" plugin to use this feature.</span></li>
 					<li><span>- Activate the plugin</span></li>
 					<li><span>- In the WP admin >> settings >> SQB Google Sheet page, connect SQB with your google account.</span></li>
 				</ul>

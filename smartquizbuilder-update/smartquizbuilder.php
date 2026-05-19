@@ -137,8 +137,8 @@ if (!class_exists('SQB_Utils')) {
 }
 
 
-// Phone-home removed: previously sent domain + license key to wickedcoolplugins.com/pluginupdater/autoupdateSQBNew.php
-// $wcpDomainSQB = "https://wickedcoolplugins.com";
+// Phone-home removed: previously sent domain + license key to external update server without consent
+// $wcpDomainSQB = "[redacted]";
 
 function getSQBUrlToDomainName($url) {
     $domain = preg_replace('/https?:\/\/(www\.)?/', '', $url);

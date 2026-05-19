@@ -4001,7 +4001,7 @@ if(isset($_GET['aweber-error'])){
 
 				<div class="have-no-quiz">
 	
-					<h3>You need to download and activate "SQB PDF Download" plugin from your <a href="https://wickedcoolplugins.com/login" target="_blank">member's area</a> on our site to use this feature. </h3>
+					<h3>You need to download and activate the "SQB PDF Download" plugin to use this feature.</h3>
 					
 				</div>
 			 <?php } ?>

@@ -69,7 +69,7 @@ if(!defined('SQB_PD_FILE')){
 <div class="member-MP--card mb-4 no_certificate_created sqb_certificate_tab_table_wrapper position-relative sqb-card-outer-gray" style="<?php echo $no_data_show; ?>">
 		<div class="empty-no-pages-section" >
 			<div class="alert alert-v2 alert-danger certificate-pdf-plugin-error" role="alert">
-			  	<p>We notice you have not installed/activated SQB PDF Plugin. You can download it from your member's area <a target="_blank" href="https://wickedcoolplugins.com/login">here.</a></p>
+			  	<p>We notice you have not installed/activated SQB PDF Plugin.</p>
 				<p>This plugin is required to use the PDF reports feature.</p>
 			</div>
 		</div>

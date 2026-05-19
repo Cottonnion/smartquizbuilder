@@ -49,9 +49,9 @@ if($sqb_gdpr_checkbox == 1){
 		<div class="gdpr-library-msg ml-4 mt-2 alert alert-v2 alert-danger" style="display: none;">
 			<p>For this feature to work, you need to first download and activate this plugin - GDPRLibrary from your members area. </p>
 
-			<p>1. Login here: <a href="https://wickedcoolplugins.com/login" target="_blank">https://wickedcoolplugins.com/login</a></p>
+			<p>1. Login to your account to access downloads.</p>
 
-			<p>2. Visit this page to download: <a href="http://wickedcoolplugins.com/sqb-download" target="_blank">http://wickedcoolplugins.com/sqb-download/</a></p>
+			<p>2. Visit the downloads page to get the SQB GDPR Add-on.</p>
 
 			Please complete these steps and refresh this page. Then you can enable this setting.
 			

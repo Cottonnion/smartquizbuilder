@@ -99,12 +99,10 @@ if(isset($alreadyBuiltThemeListOjb)){
 						<h3>Don't have access?</h3>
 						<div class="aiq-pricing-plan-btn">
 							<a class="chatgpt-btn btn-pricing-plan" href="https://smartquizbuilder.com/ai" target="_blank">SQB AI Add-On</a>
-							<!-- <a class="chatgpt-btn btn-pricing-plan" href="https://wickedcoolplugins.com/wcp/checkout-sqb/?b_id=861555" target="_blank">5-Sites Lifetime</a>
-							<a class="chatgpt-btn btn-pricing-plan" href="https://wickedcoolplugins.com/wcp/checkout-sqb/?b_id=672810" target="_blank">Unlimited-Sites Lifetime</a> -->
 						</div>
 						<div class="aiq-already-have-wrapper">
 							<h3>Have purchased it already?</h3>
-							<a class="chatgpt-btn btn-already-have" href="https://wickedcoolplugins.com/login" target="_blank">Download it from here</a>
+							<a class="chatgpt-btn btn-already-have" href="#" target="_blank">Download it from here</a>
 						</div>
 					</div>
 				<?php }else{
@@ -1014,7 +1012,7 @@ Enter it in chatGPT directly. And then enter the response from chatGPT here.</p>
 			</div>
 			<?php if(!defined('SQB_PD_FILE')){ ?>
 			<div class="mt-3 sqb-alert sqb-alert-danger">
-				<p>We notice you have not installed/activated SQB PDF Plugin. You can download it from your member's area <a target="_blank" href="https://wickedcoolplugins.com/login">here.</a></p>
+				<p>We notice you have not installed/activated SQB PDF Plugin.</p>
 				<p>This plugin is required to use the PDF reports feature.</p>
 			</div>
 			<?php } ?>
@@ -1467,7 +1465,7 @@ $pluginUrl = str_replace("http:", "", $pluginUrl);
 				<div class="sqb-ep-notice" style="">
 					<div class="alert alert-v2 alert-warning" role="alert" bis_skin_checked="1">
 						<p>We notice you are using the AI Quiz Add-On v1.3. Please upgrade to AI Quiz Add-on v1.4 to use this feature.</p></br />
-						<p>You can <a href="https://wickedcoolplugins.com/login" target="_BLANK">download it from here</a> or update it in WP admin >> plugins area. </p></br />
+						<p>You can update it in WP admin &raquo; plugins area.</p></br />
 						<p>Click the button below after you upgrade.</p>
 					</div>
 				</div>
