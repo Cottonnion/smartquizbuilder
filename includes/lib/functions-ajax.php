@@ -14,9 +14,10 @@ function sqbwp_serialize_shortcode( $atts, $content = null ) {
 add_shortcode( 'sqbwp_serialize', 'sqbwp_serialize_shortcode' );
 
 add_action('wp_ajax_sqb_refresh_fields_manager', 'SQBRefreshCustomFieldsManager');
-add_action('wp_ajax_nopriv_refresh_fields_manager', 'SQBRefreshCustomFieldsManager');
+// nopriv removed: admin-only
 
 function SQBRefreshCustomFieldsManager(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$quiz_id = $_POST['quiz_id'];
 
 	ob_start();
@@ -62,7 +63,6 @@ function SQBRefreshCustomFieldsManager(){
 }
 
 add_action('wp_ajax_sqb_quiz_answer_delete_by_question_id', 'SQBQuizAnswerDeleteByQuestionIdAjax');
-add_action('wp_ajax_nopriv_sqb_quiz_answer_delete_by_question_id', 'SQBQuizAnswerDeleteByQuestionIdAjax');
 add_action('wp_ajax_SqbGetQuizOptionFormAjax', 'SqbGetQuizOptionFormAjax');
 add_action('wp_ajax_nopriv_SqbGetQuizOptionFormAjax', 'SqbGetQuizOptionFormAjax');
 
@@ -136,6 +136,7 @@ function sqb_load_scp_products(){
 }
 
 function SQBQuizAnswerDeleteByQuestionIdAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	if(isset($_POST['question_id'])){
 		
@@ -230,7 +231,6 @@ function SQBLoadDapBlockingQuizAjax(){
 }
 
 add_action('wp_ajax_sqb_save_dap_blocking_quiz', 'SQBSaveDapBlockingQuizAjax');
-add_action('wp_ajax_nopriv_sqb_save_dap_blocking_quiz', 'SQBSaveDapBlockingQuizAjax');
 
 
 function SQBGetNameOfRootFolder(){
@@ -257,6 +257,7 @@ function SQBGetNameOfRootFolder(){
 }
 
 function SQBSaveDapBlockingQuizAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output['dapversionerr'] = '';
 	if(isset($_POST['data'])){
 		$quiz_id = $_POST['data']['quiz_id'];
@@ -382,10 +383,10 @@ function SQBSaveDapBlockingQuizAjax(){
 
 
 add_action('wp_ajax_sqb_quiz_update_status_by_id', 'SQBQuizUpdateStatusById');
-add_action('wp_ajax_nopriv_sqb_quiz_update_status_by_id', 'SQBQuizUpdateStatusById');
 
 
 function SQBQuizUpdateStatusById(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output= array();
 	if(isset($_POST)){ 	
 		$quiz_id = $_POST['quiz_id'];
@@ -409,10 +410,11 @@ function SQBQuizUpdateStatusById(){
 
 
 add_action('wp_ajax_sqb_dap_quiz_bloking_by_id', 'SQBDapQuizBlokingById');
-add_action('wp_ajax_nopriv_sqb_dap_quiz_bloking_by_id', 'SQBDapQuizBlokingById');
+// nopriv removed: admin-only
 
 
 function SQBDapQuizBlokingById(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output= array();
 	if(isset($_POST)){ 	
 		$id = $_POST['id'];
@@ -428,10 +430,10 @@ function SQBDapQuizBlokingById(){
 
  
 add_action('wp_ajax_sqb_save_fb_api_key', 'SqbSaveFbApiKeyAjax');
-add_action('wp_ajax_nopriv_sqb_save_fb_api_key', 'SqbSaveFbApiKeyAjax');
 
 
 function SqbSaveFbApiKeyAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	if(isset($_POST['fb_api_key'])){
 		
@@ -465,10 +467,10 @@ function SqbSaveFbApiKeyAjax(){
 }
 
 add_action('wp_ajax_sqb_save_quick_email_verification_api_settings', 'SqbSaveQuickEmailVerificationSettingsAjax');
-add_action('wp_ajax_nopriv_sqb_save_quick_email_verification_api_settings', 'SqbSaveQuickEmailVerificationSettingsAjax');
 
 
 function SqbSaveQuickEmailVerificationSettingsAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$output = array();
 	if(isset($_POST['qev_api_key']) && isset($_POST['qev_timeout'])){
@@ -522,7 +524,6 @@ function save_quick_email_verification_details($details){
 }
 
 add_action('wp_ajax_sqb_load_question_answer_report', 'SqbLoadQuestionAnswerReportAjax');
-add_action('wp_ajax_nopriv_sqb_load_question_answer_report', 'SqbLoadQuestionAnswerReportAjax');
 
 function SqbLoadQuestionAnswerReport($qar_quiz_id = 0,$start_date = '',$end_date = '' ){
 	
@@ -1298,6 +1299,7 @@ function SqbLoadQuestionAnswerReport($qar_quiz_id = 0,$start_date = '',$end_date
 }
 
 function SqbLoadQuestionAnswerReportAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 		if(isset($_POST['quiz_id'])){
 			
@@ -1503,8 +1505,9 @@ function SqbGetFileType($file, $ext){
 
 
 add_action('wp_ajax_sqb_save_question_file_upload', 'SqbSaveQuestionFileUploadAjax');  
-add_action('wp_ajax_nopriv_sqb_save_question_file_upload', 'SqbSaveQuestionFileUploadAjax');  
+// nopriv removed: admin-only
 function SqbSaveQuestionFileUploadAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$output['message'] = 'success';
 	$sqbquestionobj =  SQB_QuizQuestionBank::loadById($_POST['question_id']);
@@ -1558,9 +1561,10 @@ function SqbSaveQuestionFileUploadAjax(){
 }
 
 add_action('wp_ajax_sqb_save_question_answer_report', 'SqbSaveQuestionAnswerReportAjax');  
-add_action('wp_ajax_nopriv_sqb_save_question_answer_report', 'SqbSaveQuestionAnswerReportAjax');
+// nopriv removed: admin-only
 
 function SqbSaveQuestionAnswerReportAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	if(isset($_POST['quiz_id']) && isset($_POST['question_id']) && isset($_POST['answer_id'])){
 		
@@ -1684,7 +1688,6 @@ function SqbSocialShareLoadDataByQuizIdAjax_rename(){
 
 
 add_action('wp_ajax_sqb_save_social_share', 'SqbSaveSocialShareAjax');
-add_action('wp_ajax_nopriv_sqb_save_social_share', 'SqbSaveSocialShareAjax');
 
 function SqbSaveSocialShareAjax_rename(){
 	
@@ -1755,13 +1758,13 @@ function SqbSaveSocialShareAjax_rename(){
 /**funnel save functions start*/
 
 add_action('wp_ajax_sqb_save_funnel_quiz_data', 'sqbSaveFunnelQuizData');
-add_action('wp_ajax_nopriv_sqb_save_funnel_quiz_data', 'sqbSaveFunnelQuizData');
+// nopriv removed: admin-only endpoint
 
 
 add_action('wp_ajax_sqb_load_reports_data', 'sqbLoadReportsData');
-add_action('wp_ajax_nopriv_sqb_load_reports_data', 'sqbLoadReportsData');
 
 function sqbLoadReportsData(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	if($_POST['operationName'] == 'sqb_get_reports_details'){
 		
@@ -2245,9 +2248,9 @@ function sqbLoadReportsData(){
 }
 
 add_action('wp_ajax_sqb_empty_stats_table', 'sqb_empty_stats_table');
-add_action('wp_ajax_nopriv_sqb_empty_stats_table', 'sqb_empty_stats_table');
 
 function sqb_empty_stats_table(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$quiz_id = $_POST['quiz_id'];
 	if($quiz_id == 'all_quiz'){
 		SQB_Reports::delete();
@@ -2295,9 +2298,9 @@ function SqbGetAllTimeReportsAndEndDate(){
 
 
 function sqbSaveFunnelQuizData($form_data = ''){
-	
-	if($form_data !="" && is_array($form_data)){
-	
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
+
+    if($form_data !="" && is_array($form_data)){
 		$_POST = $form_data;
 	}
 	
@@ -2462,9 +2465,9 @@ function sqbSaveFunnelQuizData($form_data = ''){
 
 
 add_action('wp_ajax_sqb_save_funnel_name', 'sqb_save_funnel_name');
-add_action('wp_ajax_nopriv_sqb_save_funnel_name', 'sqb_save_funnel_name');
 
 function sqb_save_funnel_name(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$name =  $_POST['name'];
 	
 	$funnelDetails = new SQB_Funnel();
@@ -2483,9 +2486,9 @@ function sqb_save_funnel_name(){
 }
 
 add_action('wp_ajax_sqb_save_funnel_questions', 'sqb_save_funnel_questions');
-add_action('wp_ajax_nopriv_sqb_save_funnel_questions', 'sqb_save_funnel_questions');
 
 function sqb_save_funnel_questions(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$questionTitle =  $_POST['questionTitle'];
 
 	$dateTime = date('Y-m-d h:i:s');
@@ -2523,9 +2526,9 @@ function sqb_save_funnel_questions(){
 }
 
 add_action('wp_ajax_sqb_save_funnel_answers', 'sqb_save_funnel_answers');
-add_action('wp_ajax_nopriv_sqb_save_funnel_answers', 'sqb_save_funnel_answers');
 
 function sqb_save_funnel_answers(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$answers =  $_POST['answers'];
 
 	$dateTime = date('Y-m-d h:i:s');
@@ -2546,9 +2549,9 @@ function sqb_save_funnel_answers(){
 }
 
 add_action('wp_ajax_sqb_save_funnel_templates', 'sqb_save_funnel_templates');
-add_action('wp_ajax_nopriv_sqb_save_funnel_templates', 'sqb_save_funnel_templates');
 
 function sqb_save_funnel_templates(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$answers =  $_POST['answers'];
 
 	$dateTime = date('Y-m-d h:i:s');
@@ -2573,10 +2576,10 @@ function sqb_save_funnel_templates(){
 
 
 add_action('wp_ajax_sqb_save_quiz', 'SQBSaveQuizAjax');
-add_action('wp_ajax_nopriv_sqb_save_quiz', 'SQBSaveQuizAjax');
 
 /* Save Quiz  */
 function SQBSaveQuizAjax($form_data = '',$oneTime = 0){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
     
     global $is_come_from_activate_hook;
 
@@ -3829,11 +3832,11 @@ function SQBSaveQuizAjax($form_data = '',$oneTime = 0){
 }
 
 add_action('wp_ajax_sqb_save_question', 'sqb_save_question');
-add_action('wp_ajax_nopriv_sqb_save_question', 'sqb_save_question');
 
 
 /* Save Question  */
 function sqb_save_question(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	 
 	if(isset($_POST['form_data'])){		
 		$data = $_POST['form_data'];
@@ -3884,10 +3887,10 @@ function sqb_save_question(){
 }
 
 add_action('wp_ajax_sqb_save_answer', 'sqb_save_answer');
-add_action('wp_ajax_nopriv_sqb_save_answer', 'sqb_save_answer');
 
 /* Save Answers  */
 function sqb_save_answer(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	 
 	if(isset($_POST['form_data'])){		
 		$data = $_POST['form_data'];
@@ -4248,8 +4251,8 @@ function sqb_get_funnel_temp(){
 
 
 add_action('wp_ajax_sqb_save_matrix_background_options', 'sqb_save_matrix_background_options');
-add_action('wp_ajax_nopriv_sqb_save_matrix_background_options', 'sqb_save_matrix_background_options');
 function sqb_save_matrix_background_options(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['form_data'])){
 		$data = $_POST['form_data'];
 		$quiz_id = $data['quiz_id'];	
@@ -4377,10 +4380,10 @@ function sqb_save_matrix_background_options(){
 }
 
 add_action('wp_ajax_sqb_save_quiz_settings', 'sqb_save_quiz_settings');
-add_action('wp_ajax_nopriv_sqb_save_quiz_settings', 'sqb_save_quiz_settings');
 
 /* Save Quiz  */
 function sqb_save_quiz_settings(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	if(isset($_POST['form_data'])){
 		
@@ -5099,9 +5102,9 @@ function sqb_getpdf_settings(){
 }
 
 add_action('wp_ajax_sqb_filter_lead_data', 'sqb_filter_lead_data');
-add_action('wp_ajax_nopriv_sqb_filter_lead_data', 'sqb_filter_lead_data');
 
 function sqb_filter_lead_data(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$filter_by = $_REQUEST['filter_by'];		 
 	$quiz_id = $_REQUEST['quiz_id'];		 
 	$quiz_type = $_REQUEST['quiz_type'];		
@@ -5514,9 +5517,9 @@ function sqb_outcometemp($form_data = ''){
 /******fb tracking start*******/
 
 add_action('wp_ajax_sqb_save_update_fb_tracking_id', 'sqb_save_update_fb_tracking_id');
-add_action('wp_ajax_nopriv_sqb_save_update_fb_tracking_id', 'sqb_save_update_fb_tracking_id');
 
 function sqb_save_update_fb_tracking_id(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$sqb_fb_pixel_id = $_REQUEST['sqb_fb_pixel_id'];
 	$name = 'facebook';
 	$key = 'fb_tracking_id';
@@ -5540,6 +5543,7 @@ function sqb_save_update_fb_tracking_id(){
 add_action('wp_ajax_sqb_delete_customjs', 'sqb_delete_customjs');
 
 function sqb_delete_customjs(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	$id = $_REQUEST['id'];
 	$savedData = SQB_QuizTracking::loadById($id);	
@@ -5552,6 +5556,7 @@ function sqb_delete_customjs(){
 add_action('wp_ajax_sqb_update_custom_js', 'sqb_update_custom_js');
 
 function sqb_update_custom_js(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	$id = $_REQUEST['id'];
 	$status = $_REQUEST['status'];
@@ -5567,6 +5572,7 @@ function sqb_update_custom_js(){
 add_action('wp_ajax_sqb_save_customjs', 'sqb_save_customjs');
 
 function sqb_save_customjs(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	$trackObj = new SQB_QuizTracking();
 			
@@ -5603,6 +5609,7 @@ function sqb_save_customjs(){
 add_action('wp_ajax_sqb_load_custom_js_by_id', 'sqb_load_custom_js_by_id');
 
 function sqb_load_custom_js_by_id(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	
 	$id = $_REQUEST['id'];
@@ -5624,6 +5631,7 @@ function sqb_load_custom_js_by_id(){
 add_action('wp_ajax_sqb_load_custom_js', 'sqb_load_custom_js');
 
 function sqb_load_custom_js(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$quiz_id = $_REQUEST['quiz_id'];
 	$quiz_name = $_REQUEST['quiz_name'];
 	global $wpdb;
@@ -6703,9 +6711,9 @@ function sqbGetDataForQuiz_rename(){
 
 
 add_action('wp_ajax_sqb_save_quiz_notification', 'sqb_save_quiz_notification');
-add_action('wp_ajax_nopriv_sqb_save_quiz_notification', 'sqb_save_quiz_notification'); 
 
 function sqb_save_quiz_notification(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['form_data'])){
 		
 		$data = $_POST['form_data'];
@@ -6767,9 +6775,9 @@ function sqb_save_quiz_notification(){
 }  
 
 add_action('wp_ajax_sqb_save_pdf_html', 'sqb_save_pdf_html');
-add_action('wp_ajax_nopriv_sqb_save_pdf_html', 'sqb_save_pdf_html'); 
 
 function sqb_save_pdf_html(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	if(isset($_POST['outcome_id'])){
 		$outcome_id = $_POST['outcome_id'];
@@ -6941,10 +6949,11 @@ function sqb_save_pdf_html(){
 }  
 
 add_action('wp_ajax_sqb_user_delete_all_info_by_id', 'SQBUserDeleteAllInfoById');
-add_action('wp_ajax_nopriv_sqb_user_delete_all_info_by_id', 'SQBUserDeleteAllInfoById');
+// nopriv removed: admin-only
 
 //manage leads load user details
 function SQBUserDeleteAllInfoById(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output= array();
 	if(isset($_POST)){
 
@@ -6972,10 +6981,10 @@ function SQBUserDeleteAllInfoById(){
 }	
 
 add_action('wp_ajax_sqb_load_users_by_filter', 'SQBLoadUsersByFilter');
-add_action('wp_ajax_nopriv_sqb_load_users_by_filter', 'SQBLoadUsersByFilter');
 
 //manage leads load user details
 function SQBLoadUsersByFilter(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$output= array();
 	if(isset($_POST)){ 	
@@ -7213,8 +7222,8 @@ function SQBLoadUsersByFilter(){
 
 
 add_action('wp_ajax_sqb_load_search_answers_data', 'sqbLoadSearchAnswersData');
-add_action('wp_ajax_nopriv_sqb_load_search_answers_data', 'sqbLoadSearchAnswersData');
 function sqbLoadSearchAnswersData(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output= array();
 	if(isset($_POST)){
 		$quiz_id = $_POST['quiz_id'];
@@ -7513,9 +7522,9 @@ function sqbLoadSearchAnswersData(){
 }
 
 add_action('wp_ajax_sqb_load_search_answers', 'sqbLoadSearchAnswers');
-add_action('wp_ajax_nopriv_sqb_load_search_answers', 'sqbLoadSearchAnswers');
 
 function sqbLoadSearchAnswers(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output= array();
 	if(isset($_POST)){
 		$quiz_id = $_POST['quiz_id'];
@@ -8656,9 +8665,9 @@ function SQBLoadCategoryfilter(){
 
 
 add_action('wp_ajax_sqb_clone_leaderboard_by_id', 'sqbCloneLeaderboardByIdAjax');
-add_action('wp_ajax_nopriv_sqb_clone_leaderboard_by_id', 'sqbCloneLeaderboardByIdAjax');
 
 function sqbCloneLeaderboardByIdAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['leaderboard_id'])){
 		$leaderboard_id  = $_POST['leaderboard_id'];
 		$leaderboard_obj = SQB_LeaderboardPage::loadById($leaderboard_id);
@@ -8688,9 +8697,9 @@ function sqbCloneLeaderboardByIdAjax(){
 
 
 add_action('wp_ajax_sqb_clone_pdfContent_by_id', 'sqb_clone_pdfContent_by_id');
-add_action('wp_ajax_nopriv_sqb_clone_pdfContent_by_id', 'sqb_clone_pdfContent_by_id');
 
 function sqb_clone_pdfContent_by_id(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['pdf_content_id'])){
 		$pdf_content_id  = $_POST['pdf_content_id'];
 		
@@ -8711,9 +8720,9 @@ function sqb_clone_pdfContent_by_id(){
 
 
 add_action('wp_ajax_sqb_clone_quiz_by_id', 'sqbCloneQuizByIdAjax');
-add_action('wp_ajax_nopriv_sqb_clone_quiz_by_id', 'sqbCloneQuizByIdAjax');
 
 function sqbCloneQuizByIdAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['quiz_id'])){
 		$quiz_id  = $_POST['quiz_id'];
 		$quiz_obj = SQB_Quiz::loadById($quiz_id);
@@ -9329,10 +9338,11 @@ function SQBSendAdminNotificationEmailCheker(){
 	
 }
 
-add_action('wp_ajax_nopriv_sqb_quiz_lesson_migration', 'sqbQuizLessonMigrationAjax');
+// nopriv removed: admin-only
 add_action('wp_ajax_sqb_quiz_lesson_migration', 'sqbQuizLessonMigrationAjax');
 
 function sqbQuizLessonMigrationAjax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	dapSQBQuizMigration();
 	$output = array();
 	$output['result'] = "success";
@@ -9838,8 +9848,9 @@ function SQBChangeGdprStatus(){
 }
 
 add_action('wp_ajax_SQBDeleteCountryGdpr', 'SQBDeleteCountryGdpr');
-add_action('wp_ajax_nopriv_SQBDeleteCountryGdpr', 'SQBDeleteCountryGdpr');
+// nopriv removed: admin-only
 function SQBDeleteCountryGdpr(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$countryID = $_REQUEST['id'];
 	$gdpr_status = SQB_GDPR::DeleteById($countryID);
 	die;
@@ -9919,8 +9930,8 @@ function sqb_change_gdpr_notification_status(){
 
 
 add_action( 'wp_ajax_sqb_clone_outcome', 'sqb_clone_outcome' );
-add_action( 'wp_ajax_nopriv_sqb_clone_outcome', 'sqb_clone_outcome' );
 function sqb_clone_outcome(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$randval = rand(1,100);	
 	if(isset($_POST)){	
 		$temp = $_POST['selected_template']; 
@@ -10078,8 +10089,8 @@ function sqb_clone_outcome(){
 
 //Clone Question
 add_action( 'wp_ajax_sqb_clone_question', 'sqb_clone_question' );
-add_action( 'wp_ajax_nopriv_sqb_clone_question', 'sqb_clone_question' );
 function sqb_clone_question(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST)){	
 		$output_html_result = array();
 		$quiz_id = $_POST['quiz_id'];
@@ -10094,10 +10105,10 @@ function sqb_clone_question(){
 
 
 add_action('wp_ajax_sqb_save_quiz_category', 'SQBSaveQuizCategoryAjax');
-add_action('wp_ajax_nopriv_sqb_save_quiz_category', 'SQBSaveQuizCategoryAjax');
 
 
 function SQBSaveQuizCategoryAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['cat_name'])){
 		
@@ -10164,10 +10175,10 @@ function SQBLoadQuizCategoryInfoAjax(){
 }
 
 add_action('wp_ajax_sqb_quiz_category_delete', 'SQBQuizCategoryDeleteAjax');
-add_action('wp_ajax_nopriv_sqb_quiz_category_delete', 'SQBQuizCategoryDeleteAjax');
 
 
 function SQBQuizCategoryDeleteAjax(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['cat_id'])){
 		$cat_id = $_POST['cat_id'];
@@ -10290,10 +10301,11 @@ function sqbGetQuizCategoryListHtmlOfQuestionScreen($cat_select_id = 0, $show_wr
 
 
 add_action('wp_ajax_sqb_refresh_quiz_category_drop_down', 'SQBRefreshQuizCategorydropdownAjax');
-add_action('wp_ajax_nopriv_sqb_refresh_quiz_category_drop_down', 'SQBRefreshQuizCategorydropdownAjax');
+// nopriv removed: admin-only
 
 
 function SQBRefreshQuizCategorydropdownAjax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$output = array();
 	$output['html'] = sqbGetQuizCategoryListHtmlOfQuestionScreen(0,'Y');
@@ -10409,6 +10421,7 @@ function sqbAnwerDataByQuesId(){
 add_action('wp_ajax_sqbSaveOutcomeGameAnimation', 'sqbSaveOutcomeGameAnimation');
  
 function sqbSaveOutcomeGameAnimation(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	$quiz_id = !empty($_POST['quiz_id']) ? $_POST['quiz_id'] : '';
 	$outcome_id = !empty($_POST['outcome_id']) ? $_POST['outcome_id'] : ''; 
@@ -10438,9 +10451,9 @@ function sqbLoadOutcomeGameAnimation(){
 add_action('wp_ajax_sqbSaveAdvanced', 'sqbSaveAdvanced');
  
 function sqbSaveAdvanced(){
- 	/*if ( !current_user_can( 'manage_options' ) ) {
+	if ( !current_user_can( 'manage_options' ) ) {
 	    return json_encode(array('error' => 'Not allowed to access'));die;  
-	}*/
+	}
 	check_admin_referer('sqbSaveAdvanced', 'security');
 	$enabled_advanced = !empty($_POST['enabled_advanced']) ? $_POST['enabled_advanced'] : '';
 	$adv_rule_id = isset($_POST['adv_rule_id']) ? $_POST['adv_rule_id'] : 0;
@@ -10748,10 +10761,9 @@ function sqbSaveAdvanced(){
 
 add_action('wp_ajax_sqbSaveCategoryAdvancedRule', 'sqbSaveCategoryAdvancedRule');
 function sqbSaveCategoryAdvancedRule(){
-	/*if ( !current_user_can( 'manage_options' ) ) {
+	if ( !current_user_can( 'manage_options' ) ) {
 	    return json_encode(array('error' => 'Not allowed to access'));die;  
 	}
-	check_admin_referer('sqbSaveCategoryAdvancedRule', 'security');*/
 	$category_id = $_POST['category_id'];
 	$quiz_id = $_POST['quiz_id'];
 	$start_range = $_POST['start_range']; 
@@ -10889,6 +10901,7 @@ function sqbLoadOutcomeRank(){
 
 add_action('wp_ajax_sqbSaveOutcomeRank', 'sqbSaveOutcomeRank');
 function sqbSaveOutcomeRank(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$outcome_id = $_POST['outcome_id'];
 	$quiz_id = $_POST['quiz_id'];
@@ -11121,9 +11134,9 @@ function sqbSaveCategoryAdvanced(){
 
 
 add_action('wp_ajax_sqb_save_formula', 'SqbSaveFormula');
-add_action('wp_ajax_nopriv_sqb_save_formula', 'SqbSaveFormula');
 
 function SqbSaveFormula($form_data = ''){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if($form_data !="" && is_array($form_data)){
 		$_POST = $form_data;
@@ -11197,9 +11210,10 @@ function SqbSaveFormula($form_data = ''){
 }
 
 add_action('wp_ajax_get_formula_list', 'SqbGetFormulaList');
-add_action('wp_ajax_nopriv_get_formula_list', 'SqbGetFormulaList');
+// nopriv removed: admin-only
 
 function SqbGetFormulaList(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['quiz_id'])){
 	$quiz_id = $_POST['quiz_id'];
@@ -11210,9 +11224,9 @@ function SqbGetFormulaList(){
 
 
 add_action('wp_ajax_sqb_delete_formula', 'SqbDeleteFormula');
-add_action('wp_ajax_nopriv_sqb_delete_formula', 'SqbDeleteFormula');
 
 function SqbDeleteFormula(){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['formula_id'])){
 	$id = $_POST['formula_id'];
@@ -11224,9 +11238,10 @@ function SqbDeleteFormula(){
 }
 
 add_action('wp_ajax_sqb_list_formula', 'SqbListFormula');
-add_action('wp_ajax_nopriv_sqb_list_formula', 'SqbListFormula');
+// nopriv removed: admin-only
 
 function SqbListFormula(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['quiz_id'])){
 	$quiz_id = $_POST['quiz_id'];
@@ -11574,8 +11589,9 @@ function sqb_pdf_settings_save(){
 
 
 add_action('wp_ajax_sqb_save_custom_fields', 'SqbSaveCustomFields');
-add_action('wp_ajax_nopriv_sqb_save_custom_fields', 'SqbSaveCustomFields');
+// nopriv removed: admin-only
 function SqbSaveCustomFields(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	//if(isset($_POST['keyname']) && isset($_POST['description'])){
 	if(isset($_POST['keyname'])){
@@ -11773,16 +11789,18 @@ function sqb_get_custom_field_list(){
 }
 
 add_action('wp_ajax_sqb_customfields_list_table', 'SqbListCustomFieldsHtml');
-add_action('wp_ajax_nopriv_sqb_customfields_list_table', 'SqbListCustomFieldsHtml');
+// nopriv removed: admin-only
 function SqbListCustomFieldsHtml(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 $output = array();
 $output['custom_field_list_table'] = sqb_get_custom_field_list();
 echo json_encode($output);die;
 }
 
 add_action('wp_ajax_sqb_delete_custom_field', 'SqbDeleteCustomField');
-add_action('wp_ajax_nopriv_sqb_delete_custom_field', 'SqbDeleteCustomField');
+// nopriv removed: admin-only
 function SqbDeleteCustomField(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['custom_field_id'])){
 		$custom_field_id = $_POST['custom_field_id'];
@@ -11818,7 +11836,7 @@ function sqb_get_analyze_data(){
 }
 
 add_action('wp_ajax_sqb_get_email_notification_settings', 'sqb_get_email_notification_settings');
-add_action('wp_ajax_nopriv_sqb_get_email_notification_settings', 'sqb_get_email_notification_settings');
+// nopriv removed: admin-only
 function sqb_get_email_notification_settings(){
 
 	if ( !current_user_can( 'manage_options' ) ) {
@@ -11867,7 +11885,7 @@ function sqb_get_email_notification_settings(){
 }
 
 add_action('wp_ajax_sqb_get_email_notification_settings_by_quiztype', 'sqb_get_email_notification_settings_by_quiztype');
-add_action('wp_ajax_nopriv_sqb_get_email_notification_settings_by_quiztype', 'sqb_get_email_notification_settings_by_quiztype');
+// nopriv removed: admin-only
 function sqb_get_email_notification_settings_by_quiztype(){
 
 	if ( !current_user_can( 'manage_options' ) ) {
@@ -11893,8 +11911,9 @@ function sqb_get_email_notification_settings_by_quiztype(){
 }
 
 add_action('wp_ajax_sqb_get_all_questions', 'sqb_get_all_questions');
-add_action('wp_ajax_nopriv_sqb_get_all_questions', 'sqb_get_all_questions');
+// nopriv removed: admin-only
 function sqb_get_all_questions(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['quiz_id'])){ 	
 		$quiz_id = $_POST['quiz_id'];
@@ -11919,8 +11938,9 @@ function sqb_get_all_questions(){
 }
 
 add_action('wp_ajax_sqb_get_pdf_settings', 'sqb_get_pdf_settings');
-add_action('wp_ajax_nopriv_sqb_get_pdf_settings', 'sqb_get_pdf_settings');
+// nopriv removed: admin-only
 function sqb_get_pdf_settings(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['outcome_id'])){ 	
 		$outcome_id = $_POST['outcome_id'];
@@ -11937,10 +11957,11 @@ function sqb_get_pdf_settings(){
 }
 
 add_action('wp_ajax_sqb_save_question_bank', 'SQBSaveQuestionBankAjax');
-add_action('wp_ajax_nopriv_sqb_save_question_bank', 'SQBSaveQuestionBankAjax');
+// nopriv removed: admin-only
 
 /* Save Quiz  */
 function SQBSaveQuestionBankAjax($form_data = ''){
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	if($form_data !="" && is_array($form_data)){
 		$_POST['form_data'] = $form_data;
@@ -12016,8 +12037,9 @@ function sqb_show_question_by_type($quiz_type = ''){
 
 
 add_action('wp_ajax_sqb_get_quiz_by_question_id', 'sqb_get_quiz_by_question_id');
-add_action('wp_ajax_nopriv_sqb_get_quiz_by_question_id', 'sqb_get_quiz_by_question_id');
+// nopriv removed: admin-only
 function sqb_get_quiz_by_question_id(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	/*if($question_id !="" && is_array($question_id)){
 		$_POST['question_id'] = $question_id;
@@ -12039,8 +12061,9 @@ function sqb_get_quiz_by_question_id(){
 }
 
 add_action('wp_ajax_sqb_quiz_question', 'sqb_quiz_question');
-add_action('wp_ajax_nopriv_sqb_quiz_question', 'sqb_quiz_question');
+// nopriv removed: admin-only
 function sqb_quiz_question(){	
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	/*if($quiz_type !="" && is_array($quiz_type)){
 		$_POST['quiz_type'] = $quiz_type;
 	}*/
@@ -12128,8 +12151,9 @@ function sqb_quiz_question(){
 /*Update Email Notification settings in Quiz table*/
 
 add_action('wp_ajax_sqb_quiz_update_email_notification', 'sqb_quiz_update_email_notification');
-add_action('wp_ajax_nopriv_sqb_quiz_update_email_notification', 'sqb_quiz_update_email_notification');
+// nopriv removed: admin-only
 function sqb_quiz_update_email_notification(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output= array();
 	if(isset($_POST)){ 	
 		$quiz_id = $_POST['quiz_id'];
@@ -12178,8 +12202,9 @@ function sqb_check_outcome_notification(){
 }
 
 add_action('wp_ajax_sqb_add_question', 'sqb_add_question');
-add_action('wp_ajax_nopriv_sqb_add_question', 'sqb_add_question');
+// nopriv removed: admin-only
 function sqb_add_question(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if($question_ids !="" && is_array($question_ids)){
 		$_POST['question_ids'] = $question_ids;
 	}
@@ -12348,8 +12373,9 @@ function sqb_quiz_question_by_limit(){
 
 
 add_action('wp_ajax_sqb_load_all_quiz_question', 'sqb_load_all_quiz_question');
-add_action('wp_ajax_nopriv_sqb_load_all_quiz_question', 'sqb_load_all_quiz_question');
+// nopriv removed: admin-only
 function sqb_load_all_quiz_question(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if($quiz_id !="" && is_array($quiz_id)){
 		$_POST['quiz_id'] = $quiz_id;
 	}
@@ -12389,8 +12415,9 @@ function sqb_load_all_quiz_question(){
 }
 
 add_action('wp_ajax_sqb_get_pages_posts_url_list_html', 'sqbGetPagesPostsURLListHtmlAjax');
-add_action('wp_ajax_nopriv_sqb_get_pages_posts_url_list_html', 'sqbGetPagesPostsURLListHtmlAjax');
+// nopriv removed: admin-only
 function sqbGetPagesPostsURLListHtmlAjax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$quiz_id  = 0;
 	if(isset($_POST['quiz_id'])){
 		$quiz_id =  $_POST['quiz_id'];	
@@ -12552,8 +12579,9 @@ function sqbGetPagesPostsURLListHtml($quiz_id = 0, $tab_id = 0 ){
 
 
 add_action('wp_ajax_sqb_get_formula_sidepopup', 'sqb_get_formula_sidepopup');
-add_action('wp_ajax_nopriv_sqb_get_formula_sidepopup', 'sqb_get_formula_sidepopup');
+// nopriv removed: admin-only
 function sqb_get_formula_sidepopup(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['quiz_id'])){
 		$quiz_id = $_POST['quiz_id'];
@@ -12604,8 +12632,9 @@ function sqb_get_formula_sidepopup(){
 }
 
 add_action('wp_ajax_sqb_save_calculator_mapping', 'sqb_save_calculator_mapping');
-add_action('wp_ajax_nopriv_sqb_save_calculator_mapping', 'sqb_save_calculator_mapping');
+// nopriv removed: admin-only
 function sqb_save_calculator_mapping(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	 
 	if(isset($_POST['form_data'])){		
 		$data = $_POST['form_data'];
@@ -12669,8 +12698,9 @@ function sqb_save_calculator_mapping(){
 }
 
 add_action('wp_ajax_sqb_get_formula_data', 'sqb_get_formula_data');
-add_action('wp_ajax_nopriv_sqb_get_formula_data', 'sqb_get_formula_data');
+// nopriv removed: admin-only
 function sqb_get_formula_data(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['formula_id'])){
 		$formula_id = $_POST['formula_id'];
@@ -12916,8 +12946,9 @@ function SQBget_questions_with_category_mapping(){
 }
 
 add_action('wp_ajax_sqb_load_all_quiz_question_ajax', 'SQBLoadAllQuizQuestionAjax');
-add_action('wp_ajax_nopriv_sqb_load_all_quiz_question_ajax', 'SQBLoadAllQuizQuestionAjax'); 
+// nopriv removed: admin-only
 function SQBLoadAllQuizQuestionAjax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$output = array();
 
@@ -13009,8 +13040,9 @@ function SQBLoadAllQuizQuestionAjax(){
 }
 
 add_action('wp_ajax_sqb_load_all_quiz_question_ads_ajax', 'SQBLoadAllQuizQuestionAdsAjax');
-add_action('wp_ajax_nopriv_sqb_load_all_quiz_question_ads_ajax', 'SQBLoadAllQuizQuestionAdsAjax'); 
+// nopriv removed: admin-only
 function SQBLoadAllQuizQuestionAdsAjax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	$output = array();
 
@@ -13737,7 +13769,7 @@ function SQButoUTFConvert($s){
 }
 
 add_action('wp_ajax_sqb_import_csv', 'sqb_import_csv');
-add_action('wp_ajax_nopriv_sqb_import_csv', 'sqb_import_csv');
+// nopriv removed: admin-only
 function sqb_import_csv(){
 	//header("Content-Type: text/html; charset=ISO-8859-1");
 	// Allowed mime types
@@ -14171,8 +14203,9 @@ function sqb_get_correct_ans_and_points($allowed_correct_ans,$column4,$column5){
 }
 
 add_action('wp_ajax_sqb_load_all_tags', 'sqb_load_all_tags');
-add_action('wp_ajax_nopriv_sqb_load_all_tags', 'sqb_load_all_tags');
+// nopriv removed: admin-only
 function sqb_load_all_tags(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$question_id = $_REQUEST['question_id'];
 	$all_tag_datas = SQB_Tags::load();
 	$answers_data = SQB_QuizAnswers::loadByQuestionId($question_id);
@@ -14222,8 +14255,9 @@ function sqb_load_all_tags(){
 	echo json_encode($output);die;
 }
 add_action('wp_ajax_sqb_save_ans_tags', 'sqb_save_ans_tags');
-add_action('wp_ajax_nopriv_sqb_save_ans_tags', 'sqb_save_ans_tags');
+// nopriv removed: admin-only
 function sqb_save_ans_tags(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	$html = '';
 	$existing_tags = '';
@@ -14368,8 +14402,9 @@ function sqb_save_ans_tags(){
 }
 
 add_action('wp_ajax_sqb_save_ans_tags_in_ans_tb', 'sqb_save_ans_tags_in_ans_tb');
-add_action('wp_ajax_nopriv_sqb_save_ans_tags_in_ans_tb', 'sqb_save_ans_tags_in_ans_tb');
+// nopriv removed: admin-only
 function sqb_save_ans_tags_in_ans_tb(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	if(isset($_POST['ans_id'])){
 		$ans_id = $_POST['ans_id'];
@@ -14413,8 +14448,9 @@ function sqb_save_ans_tags_in_ans_tb(){
 
 
 add_action('wp_ajax_sqb_save_quiz_pdf', 'sqb_save_quiz_pdf');
-add_action('wp_ajax_nopriv_sqb_save_quiz_pdf', 'sqb_save_quiz_pdf');
+// nopriv removed: admin-only
 function sqb_save_quiz_pdf(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	if(isset($_POST['quiz_id'])){
 		$quiz_id = $_POST['quiz_id'];
@@ -14523,8 +14559,9 @@ function sqb_save_quiz_pdf(){
 }
 
 add_action('wp_ajax_sqbSavePriority', 'sqbSavePriority');
-add_action('wp_ajax_nopriv_sqbSavePriority', 'sqbSavePriority');
+// nopriv removed: admin-only
 function sqbSavePriority(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	if(isset($_POST['advance_id'])){
 		$advance_id = $_POST['advance_id'];
@@ -14555,8 +14592,9 @@ function sqbSavePriority(){
 }
 
 add_action('wp_ajax_sqbdeleteadvacerule', 'sqbdeleteadvacerule');
-add_action('wp_ajax_nopriv_sqbdeleteadvacerule', 'sqbdeleteadvacerule');
+// nopriv removed: admin-only
 function sqbdeleteadvacerule(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['id'])){
 		$id = $_POST['id']; 	
 		SQB_AdvancedRule::deleteById($id);	
@@ -14566,8 +14604,9 @@ function sqbdeleteadvacerule(){
 }
 
 add_action('wp_ajax_sqbverifyemailvalidation', 'sqbverifyemailvalidation');
-add_action('wp_ajax_nopriv_sqbverifyemailvalidation', 'sqbverifyemailvalidation');
+// nopriv removed: admin-only
 function sqbverifyemailvalidation(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	$email_verify_platform = get_option('email_verify_platform', 'quickemail');
 
@@ -14594,8 +14633,9 @@ function sqbverifyemailvalidation(){
 }
 
 add_action('wp_ajax_sqb_export_quiz', 'SqbExportQuiz');
-add_action('wp_ajax_nopriv_sqb_export_quiz', 'SqbExportQuiz');
+// nopriv removed: admin-only
 function SqbExportQuiz(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	$quiz_ids = $_POST['quiz_ids'];
 	global $wpdb;
@@ -16665,7 +16705,7 @@ function sqb_check_array_contains_array(array $array) {
 }
 
 add_action('wp_ajax_sqb_import_zip', 'SqbImportQuiz');
-add_action('wp_ajax_nopriv_sqb_import_zip', 'SqbImportQuiz');
+// nopriv removed: admin-only
 function SqbImportQuiz(){
 
 
@@ -17912,9 +17952,10 @@ function sqb_check_category(){
 
 
 add_action('wp_ajax_sqb_save_email_double_opt_info', 'sqb_save_email_double_opt_info_ajax');
-add_action('wp_ajax_nopriv_sqb_save_email_double_opt_info', 'sqb_save_email_double_opt_info_ajax');
+// nopriv removed: admin-only
 
 function sqb_save_email_double_opt_info_ajax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	
 	if(isset($_POST)){
 		
@@ -17973,8 +18014,9 @@ function sqb_load_get_custom_field_name(){
 
 
 add_action('wp_ajax_sqb_tags_content_list_table', 'SqbListTagContentHtml');
-add_action('wp_ajax_nopriv_sqb_tags_content_list_table', 'SqbListTagContentHtml');
+// nopriv removed: admin-only
 function SqbListTagContentHtml(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 $output = array();
 $output['tags_content_list_table'] = sqb_get_tag_content_list();
 echo json_encode($output);die;
@@ -18019,8 +18061,9 @@ function sqb_get_tag_content_list(){
 }
 
 add_action('wp_ajax_sqb_save_tag_content', 'SqbSaveTagContent');
-add_action('wp_ajax_nopriv_sqb_save_tag_content', 'SqbSaveTagContent');
+// nopriv removed: admin-only
 function SqbSaveTagContent(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	//if(isset($_POST['keyname']) && isset($_POST['description'])){
 	if(isset($_POST['tagname'])){
@@ -18068,8 +18111,9 @@ function SqbSaveTagContent(){
 }
 
 add_action('wp_ajax_sqb_delete_tag', 'SqbDeleteTag');
-add_action('wp_ajax_nopriv_sqb_delete_tag', 'SqbDeleteTag');
+// nopriv removed: admin-only
 function SqbDeleteTag(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	if(isset($_POST['tag_field_id'])){
 		$tag_field_id = $_POST['tag_field_id'];
@@ -18082,8 +18126,9 @@ function SqbDeleteTag(){
 
 
 add_action('wp_ajax_sqbloadalltags', 'sqbloadalltags');
-add_action('wp_ajax_nopriv_sqbloadalltags', 'sqbloadalltags');
+// nopriv removed: admin-only
 function sqbloadalltags(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = array();
 	$output['sqb_get_tags_dropdown_val'] = sqb_get_tag_list_dropdown_list();
 	echo json_encode($output);die;
@@ -18194,8 +18239,9 @@ function SQBGetTagsContentAjax(){
 
 
 add_action('wp_ajax_SQBSendTestEmail', 'SQBSendTestEmail');
-add_action('wp_ajax_nopriv_SQBSendTestEmail', 'SQBSendTestEmail');
+// nopriv removed: admin-only
 function SQBSendTestEmail(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['admin_email'])){
 		$admin_name = $_POST['admin_name'];
 		$admin_email = $_POST['admin_email'];
@@ -18445,8 +18491,9 @@ function sqb_search_popup_results(){
 
 
 add_action('wp_ajax_sqbMemberGenerateWpPage', 'sqbMemberGenerateWpPage');
-add_action('wp_ajax_nopriv_sqbMemberGenerateWpPage', 'sqbMemberGenerateWpPage');
+// nopriv removed: admin-only
 function sqbMemberGenerateWpPage(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$page_name = $_REQUEST['post_title'];
 	$status = SQBMemberCheckPageTitleExist($page_name);
 	
@@ -18506,8 +18553,9 @@ function sqbDeleteCertificateByIdAjax(){
 }
 
 add_action('wp_ajax_sqb_save_member_data', 'sqb_save_member_data');
-add_action('wp_ajax_nopriv_sqb_save_member_data', 'sqb_save_member_data');
+// nopriv removed: admin-only
 function sqb_save_member_data(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 /*ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -18737,8 +18785,9 @@ error_reporting(E_ALL);*/
 }
 
 add_action('wp_ajax_sqb_save_member_all_quiz_data', 'sqb_save_member_all_quiz_data');
-add_action('wp_ajax_nopriv_sqb_save_member_all_quiz_data', 'sqb_save_member_all_quiz_data');
+// nopriv removed: admin-only
 function sqb_save_member_all_quiz_data(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$quiz_array = $_REQUEST['quiz_array'];
 	if(isset($quiz_array)){
 		foreach($quiz_array as $quiz_id=>$quiz_data){
@@ -18777,10 +18826,11 @@ function sqb_save_member_all_quiz_data(){
 
 
 add_action('wp_ajax_sqb_save_quiz_settings_from_quiz', 'sqb_save_quiz_settings_from_quiz');
-add_action('wp_ajax_nopriv_sqb_save_quiz_settings_from_quiz', 'sqb_save_quiz_settings_from_quiz');
+// nopriv removed: admin-only
 
 /* Save Quiz  */
 function sqb_save_quiz_settings_from_quiz(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 
 	if(isset($_POST['quiz_id'])){
 		$quiz_id = $_POST['quiz_id'];
@@ -18989,8 +19039,9 @@ function SQBLoadUserDataPagination(){
 }
 
 add_action('wp_ajax_SQBSaveCertificateData', 'SQBSaveCertificateData');
-add_action('wp_ajax_nopriv_SQBSaveCertificateData', 'SQBSaveCertificateData');
+// nopriv removed: admin-only
 function SQBSaveCertificateData(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	if(isset($_POST['operation_name']) && ($_POST['operation_name'] == 'save_certificate')){
 		if(isset($_POST['data'])){	
 			$data = $_POST['data'];
@@ -19067,8 +19118,9 @@ function SQBSaveCertificateData(){
 
 
 add_action('wp_ajax_sqbEditCertificateByIdAjax', 'sqbEditCertificateByIdAjax');
-add_action('wp_ajax_nopriv_sqbEditCertificateByIdAjax', 'sqbEditCertificateByIdAjax');
+// nopriv removed: admin-only
 function sqbEditCertificateByIdAjax(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$output = [];
 	if(isset($_POST['id'])){	
 			$id = $_POST['id'];
@@ -19110,8 +19162,9 @@ function sqb_load_outcome_name(){
 }
 
 add_action('wp_ajax_sqb_load_certifciate_data', 'sqb_load_certifciate_data');
-add_action('wp_ajax_nopriv_sqb_load_certifciate_data', 'sqb_load_certifciate_data');
+// nopriv removed: admin-only
 function sqb_load_certifciate_data(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$results = SQB_QuizCertificate::load();
 	$cert_data = "";
 	if(!empty($results)){
@@ -19151,8 +19204,9 @@ function sqb_load_certifciate_data(){
 
 
 add_action('wp_ajax_sqb_save_leaderboard_data', 'sqb_save_leaderboard_data');
-add_action('wp_ajax_nopriv_sqb_save_leaderboard_data', 'sqb_save_leaderboard_data');
+// nopriv removed: admin-only
 function sqb_save_leaderboard_data(){
+	if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$leaderboard_name = $_REQUEST['leaderboard_name'];
 	if(isset($leaderboard_name)){
 		$quiz_option_selected = $_REQUEST['quiz_option_selected'];
@@ -19205,7 +19259,7 @@ function sqb_save_leaderboard_data(){
 }
 
 add_action('wp_ajax_sqb_load_quiz_data', 'sqb_load_quiz_data');
-add_action('wp_ajax_nopriv_sqb_load_quiz_data', 'sqb_load_quiz_data');
+// nopriv removed: admin-only
 function sqb_load_quiz_data(){
 	$quiz_type = $_REQUEST['quiz_type'];
 	$output = "";
@@ -19281,7 +19335,7 @@ function sqb_optin_leaderboard_users(){
 }
 
 add_action('wp_ajax_sqb_remove_user_leaderboard', 'sqb_remove_user_leaderboard');
-add_action('wp_ajax_nopriv_sqb_remove_user_leaderboard', 'sqb_remove_user_leaderboard');
+// nopriv removed: admin-only
 function sqb_remove_user_leaderboard(){
 	global $wpdb,$sqb_global_theme;
     $table_sqb_global_theme = $wpdb->prefix . $sqb_global_theme;
@@ -19680,7 +19734,7 @@ function sqb_load_global_theme_butons_data(){
 
 
 add_action('wp_ajax_SQBLaodAllTags', 'SQBLaodAllTags');
-add_action('wp_ajax_nopriv_SQBLaodAllTags', 'SQBLaodAllTags');
+// nopriv removed: admin-only
 function SQBLaodAllTags(){
 	$quiz_id =  $_REQUEST['quiz_id'];
 	if(isset($quiz_id)){
@@ -19751,7 +19805,7 @@ function SQBLaodAllTags(){
 
 
 add_action('wp_ajax_sqb_load_all_user_data', 'sqb_load_all_user_data');
-add_action('wp_ajax_nopriv_sqb_load_all_user_data', 'sqb_load_all_user_data');
+// nopriv removed: admin-only
 
 //manage leads load user details
 function sqb_load_all_user_data(){
@@ -20081,7 +20135,7 @@ function sqb_load_video_url(){
 }
 
 add_action('wp_ajax_sqb_save_video_data', 'sqb_save_video_data');
-add_action('wp_ajax_nopriv_sqb_save_video_data', 'sqb_save_video_data');
+// nopriv removed: admin-only
 function sqb_save_video_data(){
 
 	if ( ! current_user_can( 'manage_options' ) ) {
@@ -20533,7 +20587,7 @@ function sqb_disconnect_aweber() {
 }
 
 add_action('wp_ajax_sqb_disconnect_aweber', 'sqb_disconnect_aweber');
-add_action('wp_ajax_nopriv_sqb_disconnect_aweber', 'sqb_disconnect_aweber');
+// nopriv removed: admin-only
 
 add_action('wp_ajax_sqb_save_global_email_template', 'sqb_save_global_email_template');
 function sqb_save_global_email_template() {
@@ -20549,7 +20603,7 @@ function sqb_save_global_email_template() {
 }
 
 add_action('wp_ajax_sqb_save_email_template', 'sqb_save_email_template');
-add_action('wp_ajax_nopriv_sqb_save_email_template', 'sqb_save_email_template');
+// nopriv removed: admin-only
 function sqb_save_email_template() {
     $response = "";
     $responseArray = array();
@@ -20723,8 +20777,9 @@ function sqb_load_matrix_outcome_data(){
 
 
 add_action('wp_ajax_sqb_save_pdf_content_data', 'sqb_save_pdf_content_data');
-add_action('wp_ajax_nopriv_sqb_save_pdf_content_data', 'sqb_save_pdf_content_data');
+// nopriv removed: admin-only
 function sqb_save_pdf_content_data() {
+    if (!current_user_can('manage_options')) { wp_send_json_error('Unauthorized', 403); }
 	$data =  $_REQUEST['data'];
 	$name =  $_REQUEST['name'];
 	$other_options =  $_REQUEST['other_options'];
@@ -20763,7 +20818,7 @@ function sqb_save_pdf_content_data() {
 }
 
 add_action('wp_ajax_sqb_load_pdf_content', 'sqb_load_pdf_content');
-add_action('wp_ajax_nopriv_sqb_load_pdf_content', 'sqb_load_pdf_content');
+// nopriv removed: admin-only
 function sqb_load_pdf_content() {
 	$pdf_contents = SQB_PdfContent::load();
 	$pdf_name = "";
@@ -20794,7 +20849,7 @@ function sqb_preview_pdf_download(){
 }
 
 add_action('wp_ajax_load_pdf_mapping', 'load_pdf_mapping');
-add_action('wp_ajax_nopriv_load_pdf_mapping', 'load_pdf_mapping');
+// nopriv removed: admin-only
 
 
 function load_pdf_mapping() {
@@ -20880,7 +20935,7 @@ function generate_outcome_dropdown() {
 }
 
 add_action('wp_ajax_sqb_ai_powered_14_support', 'sqb_ai_powered_14_support');
-add_action('wp_ajax_nopriv_sqb_ai_powered_14_support', 'sqb_ai_powered_14_support');
+// nopriv removed: admin-only
 function sqb_ai_powered_14_support() {
 	$plugin_version = get_current_AIPQ_version();
 	if (version_compare($plugin_version, '1.4', '>=')) {
@@ -20892,7 +20947,7 @@ function sqb_ai_powered_14_support() {
 }
 
 add_action('wp_ajax_sqb_load_optin_template', 'sqb_load_optin_template');
-add_action('wp_ajax_nopriv_sqb_load_optin_template', 'sqb_load_optin_template');
+// nopriv removed: admin-only
 function sqb_load_optin_template() {
 	$optin_template = $_REQUEST['optin_template'];
 	if(isset($optin_template)){
