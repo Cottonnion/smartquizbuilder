@@ -1,9 +1,4 @@
 <?php
-
-
-	
-
-
 if(!isset($_REQUEST['externalScript'])){
 	if ( ! is_admin() && (!isset($GLOBALS['pagenow']) || $GLOBALS['pagenow'] !== 'post.php') ) {
 	//if(! is_admin() && $GLOBALS['pagenow'] !== 'post.php'){
